@@ -1,0 +1,1849 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "slug": "saludos-presentaciones",
+            "title": "Saludos y Presentaciones",
+            "description": "Este tópico cubre las formas básicas de saludar, despedirse y presentarse en portugués, tanto en situaciones formales como informales.",
+            "image": "/images/saludos-presentaciones.webp",
+            "levels": [
+                {
+                    "id": 1,
+                    "title": "Saludos Básicos",
+                    "description": "Aprende a saludar y despedirte en portugués, incluyendo expresiones comunes como \"Olá\", \"Oi\" y \"Tchau\"",
+                    "image": "/images/saludos-presentaciones-1.webp",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'Hola' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Olá",
+                                "Oi",
+                                "Tchau"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cuál es una forma informal de decir 'Hola' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Bom dia",
+                                "Oi",
+                                "Adeus"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Adiós' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Olá",
+                                "Oi",
+                                "Tchau"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cuál de las siguientes es una forma de saludo en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Tchau",
+                                "Olá",
+                                "Adeus"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Quando vejo meu amigo, digo 'Oi'. Quando saio, digo 'Tchau'.\" ¿Qué dice la persona cuando ve a su amigo?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Adeus",
+                                "Oi",
+                                "Tchau"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Na escola, os alunos dizem 'Olá' para o professor pela manhã.\" ¿Qué dicen los alumnos?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Oi",
+                                "Olá",
+                                "Tchau"
+                            ],
+                            "answer": 2
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Presentaciones Básicas",
+                    "description": "Aprende a preguntar y responder sobre nombres y cómo presentarse de manera simple.",
+                    "image": "/images/saludos-presentaciones-2.webp",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se pregunta '¿Cómo te llamas?' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Qual é o seu nome?",
+                                "Como vai você?",
+                                "Onde você mora?"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se responde 'Me llamo...' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Eu sou...",
+                                "Meu nome é...",
+                                "Eu moro em..."
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cuál de las siguientes es una forma correcta de presentarse?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Qual é o seu nome?",
+                                "Meu nome é...",
+                                "Eu gosto de..."
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Qué significa 'Como vai você?' en español?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "¿Cómo te llamas?",
+                                "¿Dónde vives?",
+                                "¿Cómo estás?"
+                            ],
+                            "answer": 2
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Quando conheço alguém novo, eu digo 'Oi, meu nome é Ana. Qual é o seu nome?'\" ¿Qué está haciendo Ana?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Despidiéndose",
+                                "Presentándose",
+                                "Preguntando por una dirección"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Pedro disse: 'Oi, eu sou Pedro. Prazer em conhecê-lo.'\" ¿Qué está diciendo Pedro?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Está diciendo adiós",
+                                "Está diciendo su nombre",
+                                "Está hablando de su casa"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Expresiones de Cortesía",
+                    "description": "Aprende a usar expresiones de cortesía esenciales como \"Por favor\", \"Obrigado/a\", y \"De nada\"",
+                    "image": "/images/saludos-presentaciones-3.webp",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'Por favor' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Obrigado",
+                                "Por favor",
+                                "De nada"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cuál es la forma correcta de decir 'Gracias' en portugués para un hombre?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Obrigada",
+                                "Obrigado",
+                                "Por favor"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'De nada' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "De nada",
+                                "Obrigado",
+                                "Por favor"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cuál es la forma correcta de decir 'Gracias' en portugués para una mujer?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Obrigado",
+                                "Obrigada",
+                                "Por favor"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Quando alguém me ajuda, eu digo 'Obrigado' se eu sou homem e 'Obrigada' se eu sou mulher.\" ¿Qué dice una mujer cuando alguien la ayuda?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "De nada",
+                                "Obrigada",
+                                "Por favor"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Depois de receber um presente, você deve dizer 'Obrigado' ou 'Obrigada'.\" ¿Qué debes decir después de recibir un regalo?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Por favor",
+                                "De nada",
+                                "Obrigado o Obrigada"
+                            ],
+                            "answer": 2
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "Saludos y Presentaciones Formales",
+                    "description": "Aprende a presentarte y saludar en contextos formales, incluyendo frases como \"Muito prazer\" y \"Como vai?\"",
+                    "image": "/images/saludos-presentaciones-4.webp",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'Mucho gusto' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Muito prazer",
+                                "Como vai?",
+                                "Até logo"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cuál es la forma correcta de preguntar '¿Cómo está?' en un contexto formal?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Oi, tudo bem?",
+                                "Como vai?",
+                                "Bom dia"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Qué significa 'Muito prazer' en español?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Encantado/a",
+                                "Hasta luego",
+                                "Hola"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Hasta luego' en portugués en un contexto formal?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Até logo",
+                                "Até mais",
+                                "Adeus"
+                            ],
+                            "answer": 0
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Quando conheço alguém em uma reunião formal, digo 'Muito prazer, meu nome é João'.\" ¿Qué dice João en una reunión formal?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Hola, ¿cómo estás?",
+                                "Mucho gusto, mi nombre es João",
+                                "Hasta luego, João"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Em um contexto formal, é comum dizer 'Como vai?' ao cumprimentar alguém.\" ¿Qué frase se usa para saludar en un contexto formal?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Oi, tudo bem?",
+                                "Como vai?",
+                                "Olá, como estás?"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "title": "Despedidas Formales e Informales",
+                    "description": "Aprende diferentes formas de despedirse en portugués, tanto en situaciones formales como informales.",
+                    "image": "/images/saludos-presentaciones-5.webp",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'Adiós' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Tchau",
+                                "Adeus",
+                                "Até logo"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cuál es una forma informal de decir 'Hasta luego' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Adeus",
+                                "Até mais",
+                                "Até amanhã"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Hasta mañana' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Até amanhã",
+                                "Até logo",
+                                "Tchau"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cuál de las siguientes es una despedida formal en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Tchau",
+                                "Até mais",
+                                "Adeus"
+                            ],
+                            "answer": 2
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Depois de uma reunião formal, é comum dizer 'Adeus' ou 'Até logo'.\" ¿Qué frases son comunes después de una reunión formal?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Tchau",
+                                "Adeus o Até logo",
+                                "Até mais"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Quando estou com amigos, geralmente digo 'Tchau' ou 'Até mais' ao ir embora.\" ¿Qué dice la persona cuando se despide de sus amigos?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Adeus",
+                                "Até amanhã",
+                                "Tchau o Até mais"
+                            ],
+                            "answer": 2
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "slug": "numeros-fechas",
+            "title": "Números y Fechas",
+            "description": "Este tópico abarca el uso de números en portugués, cómo decir fechas, y hablar sobre el tiempo.",
+            "image": "/images/numeros-fechas.webp",
+            "levels": [
+                {
+                    "id": 1,
+                    "title": "Números Básicos",
+                    "description": "Aprende los números del 1 al 10 en portugués y cómo utilizarlos en frases sencillas.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'uno' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Um",
+                                "Dois",
+                                "Três"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'cinco' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Quatro",
+                                "Cinco",
+                                "Seis"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'siete' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Seis",
+                                "Sete",
+                                "Oito"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'diez' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Dez",
+                                "Nove",
+                                "Oito"
+                            ],
+                            "answer": 0
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Eu tenho três irmãos e duas irmãs.\" ¿Cuántos hermanos tiene?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Tres hermanos y dos hermanas",
+                                "Dos hermanos y tres hermanas",
+                                "Tres hermanas y dos hermanos"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Na minha sala de aula, há dez alunos.\" ¿Cuántos alumnos hay en la sala de aula?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Ocho",
+                                "Diez",
+                                "Doce"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Números Avanzados",
+                    "description": "Aprende los números del 11 al 100 y cómo contar de manera fluida.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'quince' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Quatorze",
+                                "Quinze",
+                                "Dezesseis"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'veinticinco' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Vinte",
+                                "Vinte e cinco",
+                                "Trinta"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'cincuenta' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Quarenta",
+                                "Cinquenta",
+                                "Sessenta"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'noventa' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Oitenta",
+                                "Noventa",
+                                "Cem"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Na festa, havia vinte e cinco convidados.\" ¿Cuántos invitados había en la fiesta?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Treinta",
+                                "Veinticinco",
+                                "Cuarenta"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Minha avó tem noventa anos.\" ¿Cuántos años tiene la abuela?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Setenta",
+                                "Noventa",
+                                "Ochenta"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Fechas y Días de la Semana",
+                    "description": "Aprende a decir los días de la semana y fechas en portugués.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'lunes' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Terça-feira",
+                                "Quarta-feira",
+                                "Segunda-feira"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'viernes' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Sexta-feira",
+                                "Quinta-feira",
+                                "Quarta-feira"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'domingo' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Domingo",
+                                "Sábado",
+                                "Segunda-feira"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'miércoles' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Quarta-feira",
+                                "Quinta-feira",
+                                "Sexta-feira"
+                            ],
+                            "answer": 0
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Na próxima segunda-feira, eu tenho uma reunião importante.\" ¿Cuándo es la reunión?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "El lunes",
+                                "El martes",
+                                "El miércoles"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"A festa é no sábado.\" ¿Cuándo es la fiesta?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "El domingo",
+                                "El sábado",
+                                "El viernes"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "Meses y Estaciones del Año",
+                    "description": "Aprende los nombres de los meses y las estaciones del año en portugués.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'enero' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Janeiro",
+                                "Fevereiro",
+                                "Março"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'julio' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Junho",
+                                "Julho",
+                                "Agosto"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'invierno' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Verão",
+                                "Outono",
+                                "Inverno"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'primavera' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Verão",
+                                "Primavera",
+                                "Outono"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"As férias começam em dezembro e terminam em janeiro.\" ¿Cuándo comienzan las vacaciones?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "En noviembre",
+                                "En diciembre",
+                                "En enero"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"A primavera é a estação das flores.\" ¿Cuál es la estación de las flores?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "El verano",
+                                "La primavera",
+                                "El otoño"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "title": "Hablar sobre el Tiempo",
+                    "description": "Aprende a preguntar y decir la hora, y hablar sobre horarios y agendas.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se pregunta '¿Qué hora es?' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Que horas são?",
+                                "Quantas horas?",
+                                "Que tempo faz?"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Es mediodía' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "É meio-dia",
+                                "É meia-noite",
+                                "É de manhã"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Son las tres de la tarde' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "São três da manhã",
+                                "São três da tarde",
+                                "São três da noite"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Son las diez de la mañana' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "São dez da manhã",
+                                "São dez da tarde",
+                                "São dez da noite"
+                            ],
+                            "answer": 0
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Minha reunião é às nove horas da manhã.\" ¿A qué hora es la reunión?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "A las ocho de la mañana",
+                                "A las nueve de la mañana",
+                                "A las diez de la mañana"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"O filme começa ao meio-dia.\" ¿Cuándo comienza la película?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "A las doce del mediodía",
+                                "A las doce de la noche",
+                                "A las tres de la tarde"
+                            ],
+                            "answer": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "slug": "familia-amigos",
+            "title": "Familia y Amigos",
+            "description": "Este tópico se centra en vocabulario y frases relacionadas con la familia y las relaciones personales.",
+            "image": "/images/familia-amigos.webp",
+            "levels": [
+                {
+                    "id": 1,
+                    "title": "Miembros de la Familia",
+                    "description": "Aprende los nombres de los miembros de la familia en portugués, como \"pai\", \"mãe\", \"irmão\", y \"irmã\"",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'padre' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Pai",
+                                "Mãe",
+                                "Irmão"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'madre' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Pai",
+                                "Mãe",
+                                "Irmã"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'hermano' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Irmão",
+                                "Pai",
+                                "Mãe"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'hermana' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Irmão",
+                                "Irmã",
+                                "Pai"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Minha mãe se chama Ana e meu pai se chama João.\" ¿Cómo se llama la madre?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "João",
+                                "Ana",
+                                "Maria"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Tenho dois irmãos e uma irmã.\" ¿Cuántos hermanos tiene?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Dos hermanos y una hermana",
+                                "Una hermana",
+                                "Dos hermanos"
+                            ],
+                            "answer": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Relaciones de Amistad",
+                    "description": "Aprende a hablar sobre tus amigos y describir relaciones de amistad.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'amigo' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Amigo",
+                                "Conhecido",
+                                "Colega"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'mejor amigo' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Melhor amigo",
+                                "Amigo",
+                                "Conhecido"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'conocido' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Colega",
+                                "Amigo",
+                                "Conhecido"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'compañero de trabajo' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Colega de trabalho",
+                                "Amigo",
+                                "Conhecido"
+                            ],
+                            "answer": 0
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Meu melhor amigo se chama Pedro. Ele é muito legal.\" ¿Cómo se llama el mejor amigo?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Pedro",
+                                "João",
+                                "Carlos"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Tenho muitos colegas de trabalho, mas poucos amigos.\" ¿Qué tiene muchos?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Amigos",
+                                "Colegas de trabalho",
+                                "Conhecidos"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Describir a la Familia",
+                    "description": "Aprende a describir a los miembros de tu familia, incluyendo apariencia y características.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'alto' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Alto",
+                                "Baixo",
+                                "Magro"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'bajo' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Alto",
+                                "Baixo",
+                                "Gordo"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'delgado' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Magro",
+                                "Alto",
+                                "Baixo"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'gordo' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Gordo",
+                                "Magro",
+                                "Alto"
+                            ],
+                            "answer": 0
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Meu irmão é alto e magro.\" ¿Cómo es el hermano?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Bajo y delgado",
+                                "Alto y gordo",
+                                "Alto y delgado"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Minha mãe é baixa e tem cabelos castanhos.\" ¿Cómo es la madre?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Alta y rubia",
+                                "Baja y con cabello castaño",
+                                "Delgada y morena"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "Reuniones y celebraciones",
+                    "description": "Aprende vocabulario y frases para hablar sobre reuniones familiares y celebraciones.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'cumpleaños' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Aniversário",
+                                "Festa",
+                                "Celebração"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'fiesta' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Aniversário",
+                                "Festa",
+                                "Reunião"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'reunión' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Festa",
+                                "Reunião",
+                                "Celebração"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'celebración' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Celebração",
+                                "Festa",
+                                "Reunião"
+                            ],
+                            "answer": 0
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"No meu aniversário, farei uma festa com meus amigos.\" ¿Qué hará en su cumpleaños?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Una reunión",
+                                "Una fiesta",
+                                "Una celebración"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Na reunião de família, todos os parentes vêm.\" ¿Quiénes vienen a la reunión?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Amigos",
+                                "Vecinos",
+                                "Parientes"
+                            ],
+                            "answer": 2
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "title": "Eventos Familiares",
+                    "description": "Aprende a hablar sobre eventos familiares importantes como bodas y cumpleaños.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'boda' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Casamento",
+                                "Aniversário",
+                                "Celebração"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'aniversario' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Casamento",
+                                "Aniversário",
+                                "Festa"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'fiesta de cumpleaños' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Festa de aniversário",
+                                "Festa de casamento",
+                                "Reunião de família"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'celebración familiar' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Festa de família",
+                                "Reunião de família",
+                                "Celebração familiar"
+                            ],
+                            "answer": 2
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Vamos celebrar o casamento de minha irmã no próximo mês.\" ¿Qué celebrarán el próximo mes?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Un cumpleaños",
+                                "Una reunión",
+                                "Una boda"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"A festa de aniversário de Pedro será incrível.\" ¿Qué tipo de fiesta será increíble?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Festa de casamento",
+                                "Festa de aniversário",
+                                "Reunião de família"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "slug": "ciudad",
+            "title": "En la Ciudad",
+            "description": "Este tópico aborda el vocabulario y frases útiles para moverse por la ciudad, incluyendo direcciones y lugares comunes.",
+            "image": "/images/ciudad.webp",
+            "levels": [
+                {
+                    "id": 1,
+                    "title": "Lugares Comunes",
+                    "description": "Aprende los nombres de lugares comunes en la ciudad, como \"supermercado\", \"farmácia\", y \"restaurante\".",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'supermercado' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Supermercado",
+                                "Farmácia",
+                                "Restaurante"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'farmacia' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Restaurante",
+                                "Farmácia",
+                                "Supermercado"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'restaurante' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Farmácia",
+                                "Supermercado",
+                                "Restaurante"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'parque' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Praça",
+                                "Parque",
+                                "Mercado"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Vou ao supermercado comprar frutas.\" ¿A dónde va la persona?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "A la farmacia",
+                                "Al supermercado",
+                                "Al parque"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Vamos ao restaurante para jantar.\" ¿A dónde van a cenar?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Al supermercado",
+                                "Al parque",
+                                "Al restaurante"
+                            ],
+                            "answer": 2
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Direcciones Básicas",
+                    "description": "Aprende a preguntar y entender direcciones básicas en portugués.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice '¿Dónde está?' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Onde está?",
+                                "Como vai?",
+                                "Para onde?"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'a la derecha' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "À esquerda",
+                                "À direita",
+                                "Em frente"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'a la izquierda' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "À direita",
+                                "Em frente",
+                                "À esquerda"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'todo recto' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "À direita",
+                                "Em frente",
+                                "À esquerda"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Para chegar ao parque, vire à direita e siga em frente.\" ¿Cómo se llega al parque?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Gire a la izquierda y siga recto",
+                                "Gire a la derecha y siga recto",
+                                "Siga todo recto"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Onde está a estação de metrô?\" ¿Qué está buscando la persona?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "El supermercado",
+                                "La farmacia",
+                                "La estación de metro"
+                            ],
+                            "answer": 2
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Transporte Público",
+                    "description": "Aprende vocabulario y frases para usar el transporte público, como \"ônibus\", \"metrô\", y \"táxi\"",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'autobús' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Ônibus",
+                                "Metrô",
+                                "Táxi"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'metro' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Ônibus",
+                                "Metrô",
+                                "Táxi"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'taxi' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Ônibus",
+                                "Metrô",
+                                "Táxi"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'parada de autobús' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Estação de metrô",
+                                "Parada de ônibus",
+                                "Ponto de táxi"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Vou pegar o ônibus para ir ao trabalho.\" ¿Qué va a tomar la persona para ir al trabajo?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "El metro",
+                                "El taxi",
+                                "El autobús"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"A estação de metrô fica perto da minha casa.\" ¿Qué queda cerca de su casa?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "La parada de autobús",
+                                "La estación de metro",
+                                "El punto de taxi"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "Compras en la Ciudad",
+                    "description": "Aprende a hacer compras en tiendas y mercados, incluyendo frases útiles para preguntar precios y pagar.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice '¿Cuánto cuesta?' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Quanto custa?",
+                                "Quanto é?",
+                                "Qual o preço?"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Quiero comprar esto' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Quero isso",
+                                "Quero comprar isso",
+                                "Vou levar isso"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Pago en efectivo' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Pago em dinheiro",
+                                "Pago com cartão",
+                                "Pago em cheque"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice '¿Puedo pagar con tarjeta?' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Posso pagar com dinheiro?",
+                                "Posso pagar com cartão?",
+                                "Posso pagar com cheque?"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Eu quero comprar frutas no mercado.\" ¿Qué quiere comprar la persona?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Verduras",
+                                "Frutas",
+                                "Carnes"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Quanto custa esse livro?\" ¿Qué está preguntando la persona?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "El precio del libro",
+                                "El precio del cuaderno",
+                                "El precio de la revista"
+                            ],
+                            "answer": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "title": "Emergencias y Ayuda",
+                    "description": "Aprende cómo pedir ayuda en caso de emergencia y cómo comunicarte con autoridades y servicios médicos.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'Necesito ayuda' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Preciso de ajuda",
+                                "Quero ajuda",
+                                "Ajude-me"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Llame a una ambulancia' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Chame a polícia",
+                                "Chame os bombeiros",
+                                "Chame uma ambulância"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Estoy perdido' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Estou perdido",
+                                "Estou doente",
+                                "Estou cansado"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice '¿Dónde está el hospital?' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Onde está a farmácia?",
+                                "Onde está o hospital?",
+                                "Onde está a clínica?"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Estou perdido e preciso de ajuda para encontrar meu hotel.\" ¿Qué necesita la persona?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Ayuda para encontrar el hospital",
+                                "Ayuda para encontrar el hotel",
+                                "Ayuda para encontrar la farmacia"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Chame uma ambulância, por favor.\" ¿Qué está pidiendo la persona?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Que llamen a la policía",
+                                "Que llamen a los bomberos",
+                                "Que llamen a una ambulancia"
+                            ],
+                            "answer": 2
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "slug": "comida-bebida",
+            "title": "Comida y Bebida",
+            "description": "Este tópico se centra en el vocabulario relacionado con la comida y bebida, incluyendo cómo ordenar en un restaurante.",
+            "image": "/images/comida-bebida.webp",
+            "levels": [
+                {
+                    "id": 1,
+                    "title": "Vocabulario Básico de Comida",
+                    "description": "Aprende los nombres de frutas y verduras comunes en portugués.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'manzana' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Maçã",
+                                "Banana",
+                                "Laranja"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'plátano' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Maçã",
+                                "Banana",
+                                "Laranja"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'zanahoria' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Cenoura",
+                                "Batata",
+                                "Tomate"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'tomate' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Cenoura",
+                                "Batata",
+                                "Tomate"
+                            ],
+                            "answer": 2
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Eu gosto de comer maçã e banana.\" ¿Qué le gusta comer a la persona?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Manzana y plátano",
+                                "Naranja y plátano",
+                                "Manzana y naranja"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"A salada tem tomate e cenoura.\" ¿Qué tiene la ensalada?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Patata y tomate",
+                                "Tomate y zanahoria",
+                                "Zanahoria y patata"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "En el Restaurante",
+                    "description": "Aprende frases útiles para ordenar comida en un restaurante.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'Me gustaría una mesa para dos' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Quero uma mesa para dois",
+                                "Gostaria de uma mesa para dois",
+                                "Mesa para dois, por favor"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'La cuenta, por favor' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "A conta, por favor",
+                                "A mesa, por favor",
+                                "O menu, por favor"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Quiero ordenar' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Quero pedir",
+                                "Quero pagar",
+                                "Quero sentar"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'Un vaso de agua, por favor' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Um copo de água, por favor",
+                                "Um prato de água, por favor",
+                                "Uma garrafa de água, por favor"
+                            ],
+                            "answer": 0
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Gostaria de uma mesa para quatro pessoas.\" ¿Para cuántas personas es la mesa?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Dos",
+                                "Tres",
+                                "Cuatro"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"A conta, por favor. Vamos pagar agora.\" ¿Qué están pidiendo?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "El menú",
+                                "La cuenta",
+                                "Un vaso de agua"
+                            ],
+                            "answer": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Bebidas y Postres",
+                    "description": "Aprende a hablar sobre diferentes bebidas y postres en portugués.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'café' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Chá",
+                                "Café",
+                                "Suco"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'té' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Suco",
+                                "Café",
+                                "Chá"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'jugo' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Chá",
+                                "Suco",
+                                "Água"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'helado' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Doce",
+                                "Bolo",
+                                "Sorvete"
+                            ],
+                            "answer": 2
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Vou tomar um café depois do almoço.\" ¿Qué va a tomar después del almuerzo?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Un té",
+                                "Un café",
+                                "Un jugo"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Gostaria de um sorvete de chocolate.\" ¿Qué le gustaría a la persona?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Un helado de chocolate",
+                                "Un pastel de chocolate",
+                                "Un dulce de chocolate"
+                            ],
+                            "answer": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "Recetas y Cocinar",
+                    "description": "Aprende vocabulario relacionado con cocinar y seguir recetas en portugués.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'ingredientes' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Ingredientes",
+                                "Receita",
+                                "Cozinhar"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'receta' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Receita",
+                                "Ingredientes",
+                                "Cozinhar"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'cocinar' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Comer",
+                                "Beber",
+                                "Cozinhar"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'hornear' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Fritar",
+                                "Assar",
+                                "Ferver"
+                            ],
+                            "answer": 1
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Para fazer o bolo, você precisa de farinha, açúcar e ovos.\" ¿Qué necesita para hacer el pastel?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Leche, azúcar y huevos",
+                                "Harina, azúcar y huevos",
+                                "Harina, leche y huevos"
+                            ],
+                            "answer": 1
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"Vou cozinhar uma receita nova hoje.\" ¿Qué va a hacer hoy la persona?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Comer una receta nueva",
+                                "Leer una receta nueva",
+                                "Cocinar una receta nueva"
+                            ],
+                            "answer": 2
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "title": "Comida Tradicional",
+                    "description": "Aprende sobre platos típicos de la cocina brasileña y portuguesa y cómo hablar sobre ellos.",
+                    "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                    "speaking": [],
+                    "vocabulary": [
+                        {
+                            "ask": "¿Cómo se dice 'feijoada' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Feijoada",
+                                "Feijoca",
+                                "Feijão"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'pastel de nata' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Bolo de nata",
+                                "Doce de nata",
+                                "Pastel de nata"
+                            ],
+                            "answer": 2
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'bacalao' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Bacalhau",
+                                "Bacalhão",
+                                "Peixe"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "¿Cómo se dice 'pão de queijo' en portugués?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Pão de queijo",
+                                "Pão com queijo",
+                                "Pão de leite"
+                            ],
+                            "answer": 0
+                        }
+                    ],
+                    "listening": [],
+                    "reading": [
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"A feijoada é um prato tradicional brasileiro.\" ¿Qué tipo de plato es la feijoada?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Un plato tradicional brasileño",
+                                "Un plato tradicional portugués",
+                                "Un postre brasileño"
+                            ],
+                            "answer": 0
+                        },
+                        {
+                            "ask": "Lee el siguiente párrafo y elige la opción correcta: \"O pastel de nata é uma sobremesa muito popular em Portugal.\" ¿Qué es el pastel de nata?",
+                            "image": "https://nextui.org/images/hero-card-complete.jpeg",
+                            "options": [
+                                "Un plato principal",
+                                "Un aperitivo",
+                                "Un postre"
+                            ],
+                            "answer": 2
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
