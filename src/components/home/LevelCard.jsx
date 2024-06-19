@@ -4,6 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import { Link } from '@nextui-org/link';
 
 function LevelCard(props) {
+
 	return (
 		<Link href={`/${props?.topic}/${props?.item.id}`} className="flex flex-col items-start">
 			<Button color="primary" className="w-fit rounded-none rounded-t-lg px-8 py-4">

@@ -8,7 +8,7 @@ import TopicCard from '@/components/home/TopicCard';
 import { getTopics, getLevels } from '@/services/topicFetching';
 
 export default async function Home() {
-	const defaultTopic = await getLevels('saludos-presentaciones');
+	const defaultTopic = await getLevels('1');
 	const topicsPopular = await getTopics(4);
 
 	return (

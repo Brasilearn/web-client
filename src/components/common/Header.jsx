@@ -112,7 +112,7 @@ function Header() {
 						</Dropdown>
 					</>
 				) : (
-					<NavbarItem className="hidden lg:flex">
+					<NavbarItem className="hidden lg:flex gap-4">
 						<Link as="button" color="primary" radius="sm" onClick={handleLogin}>
 							Acceder
 						</Link>
@@ -147,14 +147,14 @@ function Header() {
 						<Divider orientation="horizontal" className="my-2" />
 					</>
 				) : (
-					<>
+					<div className="flex gap-4">
 						<Link as="button" color="primary" radius="sm" onClick={handleLogin}>
 							Acceder
 						</Link>
 						<Link color="primary" radius="sm" href="/register">
 							Registrarse
 						</Link>
-					</>
+					</div>
 				)}
 
 				{routes.map((route, index) => (
