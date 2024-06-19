@@ -1,12 +1,16 @@
 import Breadcrumbs from '@/components/common/Breadcrumbs';
 import LevelCard from '@/components/home/LevelCard';
 
-import { getTopic } from '@/services/topicFetching';
+import { getTopic, getLevels } from '@/services/topicFetching';
 import { notFound } from 'next/navigation';
 
 export default async function TopicsPage({ params }) {
 
 	const topic = await getTopic(params.topic);
+    const levels = await getLevels(topic.id);
+
+    console.log(topic);
+    console.log(levels);
 
     if (!topic) {
         notFound();
@@ -16,7 +20,7 @@ export default async function TopicsPage({ params }) {
 		<main className="max-w-screen-lg mx-auto px-6 py-4 flex flex-col gap-4">
 			<Breadcrumbs />
 			<section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-				{topic && topic.levels.map((level) => <LevelCard key={level.id} item={level} topic={topic.slug} />)}
+				{levels && levels.map((level) => <LevelCard key={level.id} item={level} topic={topic.slug} />)}
 			</section>
 		</main>
 	);

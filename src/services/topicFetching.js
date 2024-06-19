@@ -12,7 +12,7 @@ export async function getTopics() {
 }
 
 export async function getTopic(topic_slug) {
-    const res = await axios.get(`https://brasilearn-api-gateway.fly.dev/topics/${topic_slug}`)
+    const res = await axios.get(`https://brasilearn-api-gateway.fly.dev/return_topic/${topic_slug}`)
         .then((response) => {
             return response;
         }).catch((error) => {

@@ -8,7 +8,7 @@ import TopicCard from '@/components/home/TopicCard';
 import { getTopics, getLevels } from '@/services/topicFetching';
 
 export default async function Home() {
-	const defaultTopic = await getLevels('1');
+	const defaultTopic = await getLevels(1);
 	const topicsPopular = await getTopics(4);
 
 	return (
@@ -21,9 +21,9 @@ export default async function Home() {
 					<section className="overflow-x-hidden max-w-screen-lg mx-auto py-2 cursor-grab active:cursor-grabbing select-none">
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
 							{defaultTopic &&
-								defaultTopic.levels
+								defaultTopic
 									.slice(0, 3)
-									.map((item, index) => <LevelCard key={index} item={item} topic={defaultTopic.slug} />)}
+									.map((item, index) => <LevelCard key={index} item={item} topic={"saludos-presentaciones"} />)}
 						</div>
 					</section>
 					{defaultTopic && (
