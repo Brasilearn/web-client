@@ -2,8 +2,9 @@ import { Button, Link } from '@nextui-org/react';
 
 import Hero from '@/components/home/Hero';
 import Search from '@/components/home/Search';
+import Title from '@/components/common/Title';
 import LevelCard from '@/components/home/LevelCard';
-import TopicCard from '@/components/home/TopicCard';
+import Topic from '@/components/home/Topic';
 
 import { getTopics, getLevels } from '@/services/topicFetching';
 
@@ -23,7 +24,7 @@ export default async function Home() {
 							{defaultTopic &&
 								defaultTopic
 									.slice(0, 3)
-									.map((item, index) => <LevelCard key={index} item={item} topic={"saludos-presentaciones"} />)}
+									.map((item, index) => <LevelCard key={index} item={item} topic={'saludos-presentaciones'} />)}
 						</div>
 					</section>
 					{defaultTopic && (
@@ -36,12 +37,12 @@ export default async function Home() {
 				</div>
 			</div>
 			<section className="bg-slate-100">
-				<div className="max-w-screen-lg mx-auto flex flex-col md:flex-row gap-8 py-16 px-6">
+				<div className="container flex flex-col md:flex-row gap-4 py-8">
 					<div className="flex flex-col gap-4 w-full md:w-1/2">
-						<h1 className="text-2xl font-bold uppercase text-center">Temas populares</h1>
-						<div className="grid grid-cols-2 gap-2 md:gap-4">
-							{topicsPopular && topicsPopular.slice(0, 4).map((item, index) => <TopicCard key={index} item={item} />)}
-						</div>
+                        <Title size='medium' color='primary' className="text-center">Temas populares</Title>
+						{topicsPopular && (
+								<Topic data={topicsPopular.slice(0, 4)} className="grid grid-cols-1 md:grid-cols-2 gap-4"/>
+							)}
 					</div>
 					<div className="w-full md:w-1/2"></div>
 				</div>

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import topics from '@/data/topics.json';
 
 export async function getTopics() {
     const res = await axios.get('https://brasilearn-api-gateway.fly.dev/topics/')

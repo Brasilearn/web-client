@@ -1,16 +1,7 @@
 'use client';
-import React from 'react';
-import {
-	Button,
-	Dropdown,
-	DropdownTrigger,
-	DropdownMenu,
-	DropdownItem,
-	Divider,
-	Image,
-	Link,
-	User,
-} from '@nextui-org/react';
+import { useState } from 'react';
+import { Button, Divider, Link, User } from '@nextui-org/react';
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from '@nextui-org/dropdown';
 import {
 	Navbar,
 	NavbarBrand,
@@ -19,7 +10,8 @@ import {
 	NavbarMenuItem,
 	NavbarContent,
 	NavbarItem,
-} from '@nextui-org/react';
+} from '@nextui-org/navbar';
+import Logo from '@/components/common/Logo';
 
 const mockUser = {
 	name: 'Jane Doe',
@@ -28,9 +20,9 @@ const mockUser = {
 };
 
 const routes = [
-	{ path: '/', name: 'Inicio' },
 	{ path: '/topics', name: 'Topicos' },
 	{ path: '/community', name: 'Comunidad' },
+    { path: '/assistant', name: 'Asistente' },
 ];
 
 const menuItems = [
@@ -41,16 +33,8 @@ const menuItems = [
 	{ name: 'Cerrar sesión', path: '/logout' },
 ];
 
-function Logo() {
-	return (
-		<Link href="/" className="font-bold text-inherit drop-shadow-md">
-			<Image src="/images/logo.png" alt="Logo" className="w-10 h-10 md:w-16 md:h-16" />
-		</Link>
-	);
-}
-
 function Header() {
-	const [user, setUser] = React.useState(null);
+	const [user, setUser] = useState(null);
 
 	const handleLogin = () => {
 		setUser(mockUser);

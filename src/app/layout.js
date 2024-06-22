@@ -23,7 +23,9 @@ export default function RootLayout({ children }) {
 			<body className={inter.className}>
 				<NextUIProvider>
 					<Header />
-					{children}
+                    <main className='min-h-[84vh]'>
+                        {children}
+                    </main>
 					<Footer />
 				</NextUIProvider>
 			</body>

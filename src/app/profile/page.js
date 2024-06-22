@@ -1,9 +1,8 @@
-import React from 'react'
+async function ProfilePage() {
 
-function ProfilePage() {
-  return (
-    <div>ProfilePage</div>
-  )
+    return (
+        <div>ProfilePage</div>
+    )
 }
 
 export default ProfilePage

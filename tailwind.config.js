@@ -1,4 +1,4 @@
-const {nextui} = require("@nextui-org/theme");
+const { nextui } = require('@nextui-org/theme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -11,7 +11,16 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'hero': 'url("/images/hero-home.webp")',
+				hero: 'url("/images/hero-home.webp")',
+			},
+			container: {
+				center: true,
+				padding: '1.5rem',
+				screens: {
+					sm: '600px',
+					md: '728px',
+					lg: '1024px',
+				},
 			},
 		},
 	},

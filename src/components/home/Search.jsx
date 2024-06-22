@@ -1,7 +1,10 @@
+'use client';
+import { useState } from 'react';
 import { Button, Input } from '@nextui-org/react';
 import { FaSearch } from 'react-icons/fa';
 
 function Search(props) {
+    
 	return (
 		<div {...props}>
 			<form className="flex gap-2 max-w-screen-md mx-auto w-full rounded-lg p-8 shadow-lg -m-12 bg-white">
