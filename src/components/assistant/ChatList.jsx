@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FaEllipsisV } from 'react-icons/fa';
 import { Button } from '@nextui-org/react';
+import Personality from '@/components/assistant/Personality';
 import Title from '@/components/common/Title';
 
 const ChatList = () => {
@@ -93,6 +94,12 @@ const ChatList = () => {
 					Nuevo Chat
 				</Button>
 			</div>
+            <div>
+            <div className="flex flex-col gap-2 py-4">
+                <Title size="small" color="primary"> Personalidad </Title>
+                <Personality className="flex flex-col md:flex-row gap-4 items-center"/>
+			</div>
+            </div>
 		</aside>
 	);
 };

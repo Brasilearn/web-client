@@ -1,7 +1,7 @@
 import { Button, ButtonGroup } from '@nextui-org/react';
 
 function Personality({ ...props }) {
-	const personalities = ['Ayudante', 'Divertido', 'Serio', 'Informativo'];
+	const personalities = ['Profesional', 'Joven', 'Sarcastico'];
 
 	return (
 		<section {...props}>

@@ -6,8 +6,9 @@ import FAQSection from '@/components/assistant/FAQSection';
 import { FaChevronDown } from 'react-icons/fa';
 
 const AssistantPage = () => {
-	const user = {
-		name: 'Juan Pérez',
+	const mockUser = {
+        id: 1,
+		name: 'Admin',
 		imageUrl: 'https://via.placeholder.com/150',
 	};
 
@@ -22,7 +23,7 @@ const AssistantPage = () => {
 			<div className="flex flex-1">
 				{isChatListOpen && <ChatList />}
 				<main className="flex-grow flex flex-col">
-					<ChatBot />
+					<ChatBot user={mockUser}/>
 					<FAQSection />
 				</main>
 			</div>
