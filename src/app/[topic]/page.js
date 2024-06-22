@@ -7,14 +7,12 @@ import { notFound } from 'next/navigation';
 export default async function TopicsPage({ params }) {
 
 	const topic = await getTopic(params.topic);
-    const levels = await getLevels(topic.id);
-
-    console.log(topic);
-    console.log(levels);
 
     if (!topic) {
         notFound();
     }
+
+    const levels = await getLevels(topic.id);
 
 	return (
 		<main className="max-w-screen-lg mx-auto px-6 py-4 flex flex-col gap-4">

@@ -8,11 +8,12 @@ import { notFound } from 'next/navigation';
 export default async function LevelsPage({ params }) {
 	
     const topic = await getTopic(params.topic);
-    const levels = await getLevels(topic.id)
 
     if (!topic) {
         notFound();
     }
+
+    const levels = await getLevels(topic.id)
 
 	return (
 		<div className="max-w-screen-lg mx-auto px-6 py-8 flex flex-col justify-between gap-4">
