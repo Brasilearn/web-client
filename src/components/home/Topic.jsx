@@ -11,6 +11,7 @@ function Topic({ data, withDesc, ...props }) {
 				data.map((item, index) => (
 					<Card key={index} className="max-w-[400px]">
 						<CardBody className='gap-2 pb-0'>
+							
 							<Image src={item.image} alt="Card background" draggable={false} className="object-cover" />
                             <Title size='small' color='primary' className="text-center line-clamp-1">{item.title}</Title>
                             {showDesc && 
