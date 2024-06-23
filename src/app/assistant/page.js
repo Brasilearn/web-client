@@ -44,7 +44,7 @@ const AssistantPage = () => {
     };
 
 	return (
-		<div className="container flex flex-row gap-4 py-6">
+		<div className="container flex flex-col md:flex-row gap-4 py-6">
 			<aside className="w-full max-w-sm flex flex-col gap-4">
 				<Title size="medium" color="primary">
 					Chat Bot
@@ -54,7 +54,7 @@ const AssistantPage = () => {
 					Personalidad: {personality}
 				</Title>
 				<Personality
-					className="flex flex-col md:flex-row gap-2 items-center flex-wrap"
+					className="flex flex-row gap-2 items-center flex-wrap"
 					data={personalities}
 					personality={personality}
 					onPersonality={setPersonality}
@@ -63,7 +63,7 @@ const AssistantPage = () => {
 					Modelo: {model}
 				</Title>
 				<Models
-					className="flex flex-col md:flex-row gap-2 items-center flex-wrap"
+					className="flex flex-row gap-2 items-center flex-wrap"
 					data={models}
 					model={model}
 					onModel={setModel}
