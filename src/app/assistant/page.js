@@ -19,15 +19,21 @@ const AssistantPage = () => {
 	const personalities = [{ name: 'Profesional' }, { name: 'Joven' }, { name: 'Sarcastico' }];
 	const [personality, setPersonality] = useState(personalities[0].name);
 
+    const providers = [
+        { name: 'OpenAI' },
+        { name: 'Groq' },
+        { name: 'Gemini' },
+    ];
+
+    const [provider, setProvider] = useState(providers[0].name);
+
 	const models = [
 		{ name: 'GPT-3.5' },
 		{ name: 'GPT-3.5-turbo' },
 		{ name: 'GPT-4o' },
-		{ name: 'Groq' },
-		{ name: 'Gemini' },
-		{ name: 'Gemma 7b' },
-		{ name: 'LLaMA3 70b' },
-		{ name: 'LLaMA3 8b' },
+		{ name: 'gemma-7b-it' },
+		{ name: 'llama3-70b-8192' },
+		{ name: 'llama3-8b-8192' },
 	];
 	const [model, setModel] = useState(models[0].name);
 
@@ -37,8 +43,9 @@ const AssistantPage = () => {
 	const handleSendMessage = (message) => {
         setMessages(prevMessages => [...prevMessages, { text: message, isUser: true }]);
         async function getResponse() {
-            const response = await sendMessages(message, model, personality);
-            setMessages(prevMessages => [...prevMessages, { text: response, isUser: false }]);
+            const response = await sendMessages("1", "1", message, "groq", model, personality);
+            console.log(response);
+            setMessages(prevMessages => [...prevMessages, { text: response.message, isUser: false }]);
         }
         getResponse();
     };
