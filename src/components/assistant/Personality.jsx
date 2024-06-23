@@ -1,17 +1,22 @@
-import { Button, ButtonGroup } from '@nextui-org/react';
+import { Button } from '@nextui-org/react';
 
-function Personality({ ...props }) {
-	const personalities = ['Profesional', 'Joven', 'Sarcastico'];
+function Personality({ data, personality, onPersonality, ...props }) {
+	const handlePersonality = (e, personality) => {
+		e.preventDefault();
+		onPersonality(personality);
+	};
 
 	return (
 		<section {...props}>
-			<ButtonGroup>
-				{personalities.map((personality, index) => (
-					<Button key={index} color="primary" auto>
-						{personality}
+				{data.map((item, index) => (
+					<Button
+						key={index}
+						color="primary"
+						isDisabled={personality === item.name}
+						onClick={(e) => handlePersonality(e, data[index].name)}>
+						{item.name}
 					</Button>
 				))}
-			</ButtonGroup>
 		</section>
 	);
 }

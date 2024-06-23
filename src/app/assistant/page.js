@@ -1,39 +1,79 @@
-"use client"
+'use client';
 import React, { useState } from 'react';
+import Title from '@/components/common/Title';
+import Personality from '@/components/assistant/Personality';
 import ChatBot from '@/components/assistant/ChatBot';
 import ChatList from '@/components/assistant/ChatList';
+import ChatInput from '@/components/assistant/ChatInput';
 import FAQSection from '@/components/assistant/FAQSection';
-import { FaChevronDown } from 'react-icons/fa';
+import Models from '@/components/assistant/Models';
+import { sendMessages } from '@/services/iaFetching';
 
 const AssistantPage = () => {
 	const mockUser = {
-        id: 1,
+		id: 1,
 		name: 'Admin',
 		imageUrl: 'https://via.placeholder.com/150',
 	};
 
-	const [isChatListOpen, setIsChatListOpen] = useState(true);
+	const personalities = [{ name: 'Profesional' }, { name: 'Joven' }, { name: 'Sarcastico' }];
+	const [personality, setPersonality] = useState(personalities[0].name);
 
-	const toggleChatList = () => {
-		setIsChatListOpen(!isChatListOpen);
-	};
+	const models = [
+		{ name: 'GPT-3.5' },
+		{ name: 'GPT-3.5-turbo' },
+		{ name: 'GPT-4o' },
+		{ name: 'Groq' },
+		{ name: 'Gemini' },
+		{ name: 'Gemma 7b' },
+		{ name: 'LLaMA3 70b' },
+		{ name: 'LLaMA3 8b' },
+	];
+	const [model, setModel] = useState(models[0].name);
+
+    const [messages, setMessages] = useState([{ text: '¡Hola! ¿Cómo puedo ayudarte hoy?', isUser: false }]);
+
+
+	const handleSendMessage = (message) => {
+        setMessages(prevMessages => [...prevMessages, { text: message, isUser: true }]);
+        async function getResponse() {
+            const response = await sendMessages(message, model, personality);
+            setMessages(prevMessages => [...prevMessages, { text: response, isUser: false }]);
+        }
+        getResponse();
+    };
 
 	return (
-		<div className="flex flex-col min-h-screen bg-gray-100">
-			<div className="flex flex-1">
-				{isChatListOpen && <ChatList />}
-				<main className="flex-grow flex flex-col">
-					<ChatBot user={mockUser}/>
-					<FAQSection />
-				</main>
-			</div>
-			<button
-				className="fixed bottom-4 left-4 bg-success/75 text-white p-2 rounded-full shadow-lg z-50"
-				onClick={toggleChatList}>
-				<div className={`transition-all duration-400 ${isChatListOpen ? 'rotate-90' : '-rotate-90'}`}>
-					<FaChevronDown size={14} />
-				</div>
-			</button>
+		<div className="container flex flex-row gap-4 py-6">
+			<aside className="w-full max-w-sm flex flex-col gap-4">
+				<Title size="medium" color="primary">
+					Chat Bot
+				</Title>
+				<ChatList />
+				<Title size="small" color="primary">
+					Personalidad: {personality}
+				</Title>
+				<Personality
+					className="flex flex-col md:flex-row gap-2 items-center flex-wrap"
+					data={personalities}
+					personality={personality}
+					onPersonality={setPersonality}
+				/>
+				<Title size="small" color="primary">
+					Modelo: {model}
+				</Title>
+				<Models
+					className="flex flex-col md:flex-row gap-2 items-center flex-wrap"
+					data={models}
+					model={model}
+					onModel={setModel}
+				/>
+			</aside>
+			<main className="w-full flex flex-col gap-4">
+				<ChatBot user={mockUser} data={messages} />
+                <ChatInput onSendMessage={handleSendMessage} />
+				<FAQSection />
+			</main>
 		</div>
 	);
 };

@@ -1,6 +1,7 @@
-"use client"
+'use client';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Button, Input } from '@nextui-org/react';
 
 const ChatInput = ({ onSendMessage }) => {
 	const [message, setMessage] = useState('');
@@ -14,19 +15,17 @@ const ChatInput = ({ onSendMessage }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className="flex items-center bg-white p-3 shadow-md border-t border-gray-300">
-			<input
+		<form onSubmit={handleSubmit} className="flex items-center gap-4">
+			<Input
 				type="text"
-				className="flex-grow p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+				className="flex-grow"
 				value={message}
 				onChange={(e) => setMessage(e.target.value)}
 				placeholder="Escribe tu mensaje..."
 			/>
-			<button
-				type="submit"
-				className="ml-3 bg-green-700 text-white p-2 rounded-md hover:bg-green-600 transition duration-300">
+			<Button type="submit" color="primary">
 				Enviar
-			</button>
+			</Button>
 		</form>
 	);
 };

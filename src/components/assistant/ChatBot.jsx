@@ -1,33 +1,20 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ChatMessage from '@/components/assistant/ChatMessage';
-import ChatInput from '@/components/assistant/ChatInput';
-import {sendMessages} from '@/services/iaFetching';
-const ChatBot = () => {
-	const [messages, setMessages] = useState([{ text: '¡Hola! ¿Cómo puedo ayudarte hoy?', isUser: false }]);
 
-	const handleSendMessage = (message) => {
-        setMessages(prevMessages => [...prevMessages, { text: message, isUser: true }]);
-        async function getResponse() {
-            const response = await sendMessages(message);
-            setMessages(prevMessages => [...prevMessages, { text: response, isUser: false }]);
-        }
-        getResponse();
-    };
-
+const ChatBot = ({ data }) => {
 	useEffect(() => {
 		const chatContainer = document.querySelector('#chat-container');
 		chatContainer.scrollTop = chatContainer.scrollHeight;
-	}, [messages]);
+	}, [data]);
 
 	return (
-		<div className="flex flex-col h-full p-4 bg-white">
-			<div id="chat-container" className="flex-grow overflow-y-auto p-2 border border-gray-300 rounded-md shadow-inner">
-				{messages.map((msg, index) => (
-					<ChatMessage key={index} message={msg.text} isUser={msg.isUser} />
-				))}
-			</div>
-			<ChatInput onSendMessage={handleSendMessage} />
+		<div
+			id="chat-container"
+			className="flex flex-col gap-4 overflow-y-scroll overflow-clip h-[50vh] p-4 rounded-md border border-gray-100 bg-gray-50">
+			{data.map((msg, index) => (
+				<ChatMessage key={index} message={msg.text} isUser={msg.isUser} />
+			))}
 		</div>
 	);
 };
