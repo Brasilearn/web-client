@@ -19,7 +19,7 @@ const AssistantPage = () => {
 	const personalities = [{ name: 'Profesional' }, { name: 'Joven' }, { name: 'Sarcastico' }];
 	const [personality, setPersonality] = useState(personalities[0].name);
 
-	const providers = [{ name: 'openai' }, { name: 'groq' }];
+	const providers = [{ name: 'groq' }, { name: 'openai' }];
 	const [provider, setProvider] = useState(providers[0].name);
 
 	const models = {
