@@ -16,6 +16,16 @@ export async function getContext(user_id, chat_id) {
 }
 
 export async function sendMessages(user_id, chat_id, message, provider, model, personality) {
+    /**
+    {
+    "user_id": "5",
+    "prompt": "Enseñame un vocabulario de portugues para conquistar una chica",
+    "personalidad": "Sarcastico",
+    "provider":"openai",
+    "model":"gpt-3.5-turbo",
+    "chat_id":"12"
+    }
+    */
 	const body = {
 		user_id: user_id,
         chat_id: chat_id,

@@ -1,13 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Title from '@/components/common/Title';
 
 import ChatBot from '@/components/assistant/ChatBot';
 import ChatList from '@/components/assistant/ChatList';
 import ChatInput from '@/components/assistant/ChatInput';
 import FAQSection from '@/components/assistant/FAQSection';
-import Models from '@/components/assistant/Models';
-import Personality from '@/components/assistant/Personality';
 import Filters from '@/components/common/Filters';
 import { sendMessages } from '@/services/iaFetching';
 
@@ -21,12 +19,11 @@ const AssistantPage = () => {
 	const personalities = [{ name: 'Profesional' }, { name: 'Joven' }, { name: 'Sarcastico' }];
 	const [personality, setPersonality] = useState(personalities[0].name);
 
-	const providers = [{ name: 'openAI' }, { name: 'groq' }];
+	const providers = [{ name: 'openai' }, { name: 'groq' }];
 	const [provider, setProvider] = useState(providers[0].name);
 
 	const models = {
-		openAI: [{ name: 'GPT-3.5' }, { name: 'GPT-3.5-turbo' }, { name: 'GPT-4o' }],
-
+		openai: [{ name: 'gpt-3.5-turbo' },{ name: 'gpt-4' },  { name: 'gpt-4o' }],
 		groq: [{ name: 'gemma-7b-it' }, { name: 'llama3-70b-8192' }, { name: 'llama3-8b-8192' }],
 	};
 	const [model, setModel] = useState(models[provider][0].name);
@@ -36,12 +33,23 @@ const AssistantPage = () => {
 	const handleSendMessage = (message) => {
 		setMessages((prevMessages) => [...prevMessages, { text: message, isUser: true }]);
 		async function getResponse() {
-			const response = await sendMessages('1', '1', message, 'groq', model, personality);
+			const response = await sendMessages('1', '1', message, providers, model, personality);
 			console.log(response);
 			setMessages((prevMessages) => [...prevMessages, { text: response.message, isUser: false }]);
 		}
 		getResponse();
 	};
+
+    useEffect(() => {
+        if (provider === 'groq') {
+            setModel(models[provider][0].name);
+        }
+        if (provider === 'openai') {
+            setModel(models[provider][0].name);
+        }
+        
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [provider]);
 
 	return (
 		<div className="container flex flex-col md:flex-row gap-4 py-6">
