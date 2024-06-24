@@ -33,7 +33,7 @@ const AssistantPage = () => {
 	const handleSendMessage = (message) => {
 		setMessages((prevMessages) => [...prevMessages, { text: message, isUser: true }]);
 		async function getResponse() {
-			const response = await sendMessages('1', '1', message, providers, model, personality);
+			const response = await sendMessages('1', '1', message, provider, model, personality);
 			console.log(response);
 			setMessages((prevMessages) => [...prevMessages, { text: response.message, isUser: false }]);
 		}
