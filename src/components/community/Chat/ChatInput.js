@@ -5,12 +5,14 @@ const ChatInput = ({ onSendMessage }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSendMessage(input);
-        setInput('');
+        if (input.trim() !== '') {
+            onSendMessage(input);
+            setInput('');
+        }
     };
 
     return (
-        <form onSubmit={handleSubmit} className="chat-input flex">
+        <form onSubmit={handleSubmit} className="chat-input flex items-center gap-2">
             <input
                 type="text"
                 value={input}

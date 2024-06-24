@@ -18,10 +18,10 @@ const Chat = ({ user, users, setUsers }) => {
     };
 
     return (
-        <div className="chat-container flex flex-col gap-4">
-            <ChatUsers users={users} />
+        <div className="chat-container flex flex-col gap-4">            
             <ChatList messages={messages} />
             <ChatInput onSendMessage={handleSendMessage} />
+            <ChatUsers users={users} />
         </div>
     );
 };

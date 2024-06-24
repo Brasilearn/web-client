@@ -4,6 +4,7 @@ import Title from '@/components/common/Title';
 import Chat from '@/components/community/Chat/Chat';
 import GamificationScreen from '@/components/community/Gamification/GamificationScreen';
 
+
 const CommunityPage = () => {
     const mockUser = {
         id: 1,
@@ -12,9 +13,9 @@ const CommunityPage = () => {
     };
 
     const [users, setUsers] = useState([
-        { id: 1, name: 'Admin', status: 'conectado' },
-        { id: 2, name: 'User1', status: 'ocupado' },
-        { id: 3, name: 'User2', status: 'ausente' },
+        { id: 1, name: 'Admin', status: 'conectado', points: 0 },
+        { id: 2, name: 'User1', status: 'ocupado', points: 0 },
+        { id: 3, name: 'User2', status: 'ausente', points: 0 },
     ]);
 
     return (
@@ -23,10 +24,10 @@ const CommunityPage = () => {
                 <Title size="medium" color="primary">
                     Comunidad
                 </Title>
-                <Chat user={mockUser} users={users} setUsers={setUsers} />
+                <Chat user={mockUser} users={users} setUsers={setUsers} />                
             </aside>
             <main className="w-full flex flex-col gap-4">
-                <GamificationScreen />
+                <GamificationScreen users={users} setUsers={setUsers} />
             </main>
         </div>
     );
