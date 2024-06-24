@@ -1,12 +1,14 @@
 'use client';
 import React, { useState } from 'react';
 import Title from '@/components/common/Title';
-import Personality from '@/components/assistant/Personality';
+
 import ChatBot from '@/components/assistant/ChatBot';
 import ChatList from '@/components/assistant/ChatList';
 import ChatInput from '@/components/assistant/ChatInput';
 import FAQSection from '@/components/assistant/FAQSection';
 import Models from '@/components/assistant/Models';
+import Personality from '@/components/assistant/Personality';
+import Filters from '@/components/common/Filters';
 import { sendMessages } from '@/services/iaFetching';
 
 const AssistantPage = () => {
@@ -19,36 +21,27 @@ const AssistantPage = () => {
 	const personalities = [{ name: 'Profesional' }, { name: 'Joven' }, { name: 'Sarcastico' }];
 	const [personality, setPersonality] = useState(personalities[0].name);
 
-    const providers = [
-        { name: 'OpenAI' },
-        { name: 'Groq' },
-        { name: 'Gemini' },
-    ];
+	const providers = [{ name: 'openAI' }, { name: 'groq' }];
+	const [provider, setProvider] = useState(providers[0].name);
 
-    const [provider, setProvider] = useState(providers[0].name);
+	const models = {
+		openAI: [{ name: 'GPT-3.5' }, { name: 'GPT-3.5-turbo' }, { name: 'GPT-4o' }],
 
-	const models = [
-		{ name: 'GPT-3.5' },
-		{ name: 'GPT-3.5-turbo' },
-		{ name: 'GPT-4o' },
-		{ name: 'gemma-7b-it' },
-		{ name: 'llama3-70b-8192' },
-		{ name: 'llama3-8b-8192' },
-	];
-	const [model, setModel] = useState(models[0].name);
+		groq: [{ name: 'gemma-7b-it' }, { name: 'llama3-70b-8192' }, { name: 'llama3-8b-8192' }],
+	};
+	const [model, setModel] = useState(models[provider][0].name);
 
-    const [messages, setMessages] = useState([{ text: '¡Hola! ¿Cómo puedo ayudarte hoy?', isUser: false }]);
-
+	const [messages, setMessages] = useState([{ text: '¡Hola! ¿Cómo puedo ayudarte hoy?', isUser: false }]);
 
 	const handleSendMessage = (message) => {
-        setMessages(prevMessages => [...prevMessages, { text: message, isUser: true }]);
-        async function getResponse() {
-            const response = await sendMessages("1", "1", message, "groq", model, personality);
-            console.log(response);
-            setMessages(prevMessages => [...prevMessages, { text: response.message, isUser: false }]);
-        }
-        getResponse();
-    };
+		setMessages((prevMessages) => [...prevMessages, { text: message, isUser: true }]);
+		async function getResponse() {
+			const response = await sendMessages('1', '1', message, 'groq', model, personality);
+			console.log(response);
+			setMessages((prevMessages) => [...prevMessages, { text: response.message, isUser: false }]);
+		}
+		getResponse();
+	};
 
 	return (
 		<div className="container flex flex-col md:flex-row gap-4 py-6">
@@ -60,25 +53,34 @@ const AssistantPage = () => {
 				<Title size="small" color="primary">
 					Personalidad: {personality}
 				</Title>
-				<Personality
+				<Filters
 					className="flex flex-row gap-2 items-center flex-wrap"
 					data={personalities}
-					personality={personality}
-					onPersonality={setPersonality}
+					select={personality}
+					onSelect={setPersonality}
+				/>
+                <Title size="small" color="primary">
+					Provedor: {provider}
+				</Title>
+				<Filters
+					className="flex flex-row gap-2 items-center flex-wrap"
+					data={providers}
+					select={provider}
+					onSelect={setProvider}
 				/>
 				<Title size="small" color="primary">
 					Modelo: {model}
 				</Title>
-				<Models
+				<Filters
 					className="flex flex-row gap-2 items-center flex-wrap"
-					data={models}
-					model={model}
-					onModel={setModel}
+					data={models[provider]}
+					select={model}
+					onSelect={setModel}
 				/>
 			</aside>
 			<main className="w-full flex flex-col gap-4">
 				<ChatBot user={mockUser} data={messages} />
-                <ChatInput onSendMessage={handleSendMessage} />
+				<ChatInput onSendMessage={handleSendMessage} />
 				<FAQSection />
 			</main>
 		</div>

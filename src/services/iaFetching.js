@@ -30,8 +30,8 @@ export async function sendMessages(user_id, chat_id, message, provider, model, p
 		user_id: user_id,
         chat_id: chat_id,
 		prompt: message,
-		provider: provider.toLowerCase(),
-        model: model.toLowerCase(),
+		provider: provider,
+        model: model,
 		personalidad: personality,
 	};
 	try {
@@ -39,6 +39,6 @@ export async function sendMessages(user_id, chat_id, message, provider, model, p
 		return response.data;
 	} catch (error) {
 		console.error(error);
-		return 'Lo siento, no pude entender tu mensaje.';
+		return { message: 'Lo siento, no pude entender tu mensaje.'};
 	}
 }
