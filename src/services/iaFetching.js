@@ -16,22 +16,12 @@ export async function getContext(user_id, chat_id) {
 }
 
 export async function sendMessages(user_id, chat_id, message, provider, model, personality) {
-	/*
-    {
-    "user_id": "5",
-    "prompt": "Enseñame un vocabulario de portugues basico",
-    "personalidad": "Sarcastico",
-    "provider":"groq",
-    "model":"llama3-8b-8192",
-    "chat_id":"1"
-    }
-    */
 	const body = {
 		user_id: user_id,
         chat_id: chat_id,
 		prompt: message,
 		provider: provider.toLowerCase(),
-        model: model,
+        model: model.toLowerCase(),
 		personalidad: personality,
 	};
 	try {
