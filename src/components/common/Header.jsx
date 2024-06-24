@@ -28,7 +28,7 @@ const routes = [
 const menuItems = [
 	{ name: 'Perfil', path: '/profile' },
 	{ name: 'Actividad', path: '/activity' },
-	{ name: 'Tabla de Desafíos', path: '/table-challenge' },
+	{ name: 'Tabla de Desafíos', path: 'profile/challenge' },
 	{ name: 'Ajustes', path: '/settings' },
 	{ name: 'Cerrar sesión', path: '/logout' },
 ];
