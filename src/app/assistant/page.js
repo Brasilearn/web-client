@@ -41,13 +41,7 @@ const AssistantPage = () => {
 	};
 
     useEffect(() => {
-        if (provider === 'groq') {
-            setModel(models[provider][0].name);
-        }
-        if (provider === 'openai') {
-            setModel(models[provider][0].name);
-        }
-        
+        setModel(models[provider][0].name);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [provider]);
 

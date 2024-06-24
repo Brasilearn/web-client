@@ -30,8 +30,8 @@ export async function sendMessages(user_id, chat_id, message, provider, model, p
 		user_id: user_id,
         chat_id: chat_id,
 		prompt: message,
-		provider: provider.toLowerCase(),
-        model: model.toLowerCase(),
+		provider: provider,
+        model: model,
 		personalidad: personality,
 	};
 	try {
