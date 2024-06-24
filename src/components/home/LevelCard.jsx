@@ -4,6 +4,10 @@ import { FaArrowRight } from 'react-icons/fa';
 import { Link } from '@nextui-org/link';
 
 function LevelCard(props) {
+    // Atualize a URL da imagem para ser absoluta
+    const imageUrl = props?.item.image.startsWith('http')
+        ? props.item.image
+        : `http://brasilearn-api-gateway.fly.dev${props.item.image}`;
 
 	return (
 		<Link href={`/${props?.topic}/${props?.item.id}`} className="flex flex-col items-start">
@@ -15,7 +19,7 @@ function LevelCard(props) {
 					<Image
 						alt="Card background"
 						className="object-cover aspect-square rounded-md select-none"
-						src={props?.item.image}
+						src={imageUrl}
 						draggable="false"
 						width={300}
 						onDragStart={(e) => e.preventDefault()}
