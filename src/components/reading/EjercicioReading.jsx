@@ -2,15 +2,15 @@
 import { Image } from '@nextui-org/react';
 import React, { useState, useEffect } from 'react';
 
-function EjercicioReading({ excercice, onResponse }) {
+function EjercicioReading({ excercice, onResponse, topic_slug}) {
 	const [seleccion, setSeleccion] = useState(null);
 	const [options, setOptions] = useState([]);
 	const [questionText, setQuestionText] = useState('');
 	const [questionQuestion, setQuestionQuestion] = useState('');
 
-	const imageUrl = excercice?.image?.startsWith('http')
-		? excercice.image
-		: `http://brasilearn-api-gateway.fly.dev${excercice?.image}`;
+	const randomValue = Math.floor(Math.random() * 10) + 1;
+	const imageUrl = `https://brasilearn-api-gateway.fly.dev/media/images/${topic_slug}/${randomValue}.webp`
+	
 
 	useEffect(() => {
 		setSeleccion(null); // Reinicia a seleção quando muda o exercício

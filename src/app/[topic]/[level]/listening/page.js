@@ -11,27 +11,33 @@ import Breadcrumbs from '@/components/common/Breadcrumbs';
 
 function ListeningPage() {
     const path = usePathname();
-    const params = {
-		topic: path.split('/')[1],
-		level: path.split('/')[2],
+    const pathSegments = path.split('/'); // Divide a URL em segmentos
+	const params = {
+		topic_slug: pathSegments[1],
+		level_dif: parseInt(pathSegments[2], 10),
+		quest_type: pathSegments[3]
 	};
 
 	const initialPhrase = { portuguese: 'Olá, como você está?', spanish: 'Hola, ¿cómo estás?' };
 
-	const [phrase, setPhrase] = useState(initialPhrase);
-
+	const [phrase, setPhrase] = useState(null);
+	const [topic_title, setTopicTitle] = useState(null);
+	const [frases, setFrases] = useState([]);
 	const [topic, setTopic] = React.useState(null);
 	const [level, setLevel] = React.useState(null);
+	const [level_id, setLevelID] = useState(null);
 
 	React.useEffect(() => {
 		async function fetchData() {
-			const topicData = await getTopic(params.topic);
-			setTopic(topicData);
-			setLevel(topicData.levels[params.level - 1]);
+			const { pregs, topicTitle, levelId } = await return_questions(params.topic_slug, params.level_dif, params.quest_type);
+            setFrases(pregs);
+			setTopicTitle(topicTitle);
+			setLevelID(levelId);
 		}
 		fetchData();
-	}, [params.topic, params.level]);
+	}, [params.topic_slug, params.level_dif, params.quest_type]);
 
+	console.log(pregs)
 	const handlePlay = () => {
 		console.log('Reproduciendo frase...');
 	};

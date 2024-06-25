@@ -88,7 +88,7 @@ function ReadingPage() {
 						</div>
 					</div>
 				) : lifes > 0 ? (
-					<EjercicioReading excercice={readings && readings[exerciseIndex]} onResponse={handleResponse} />
+					<EjercicioReading excercice={readings && readings[exerciseIndex]} onResponse={handleResponse} topic_slug={params.topic_slug}/>
 				) : (
 					<div className="text-center text-red-500 text-2xl font-bold space-y-4">
 						<p>¡Has perdido todas tus vidas!</p>
