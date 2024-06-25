@@ -2,29 +2,45 @@
 import { Image } from '@nextui-org/react';
 import React, { useState, useEffect } from 'react';
 
-function EjercicioVocabulario({ excercice, onResponse }) {
+function EjercicioReading({ excercice, onResponse }) {
 	const [seleccion, setSeleccion] = useState(null);
 	const [options, setOptions] = useState([]);
+	const [questionText, setQuestionText] = useState('');
+	const [questionQuestion, setQuestionQuestion] = useState('');
 
-	const imageUrl =excercice?.image.startsWith('http')
-        ? props.item.image
-        : `http://brasilearn-api-gateway.fly.dev${excercice?.image}`;
+	const imageUrl = excercice?.image?.startsWith('http')
+		? excercice.image
+		: `http://brasilearn-api-gateway.fly.dev${excercice?.image}`;
 
 	useEffect(() => {
-		
 		setSeleccion(null); // Reinicia a seleção quando muda o exercício
 		if (excercice && typeof excercice.options === 'string') {
 			// Faz o parsing de options se for uma string
 			try {
 				const parsedOptions = JSON.parse(excercice.options);
 				setOptions(parsedOptions);
-
 			} catch (error) {
 				console.error('Erro ao fazer o parsing das opções:', error);
 				setOptions([]);
 			}
 		} else {
 			setOptions(excercice?.options || []);
+		}
+
+		if (excercice && typeof excercice.question === 'string') {
+			// Faz o parsing de question se for uma string
+			try {
+				const parsedQuestion = JSON.parse(excercice.question);
+				setQuestionText(parsedQuestion.text);
+				setQuestionQuestion(parsedQuestion.question);
+			} catch (error) {
+				console.error('Erro ao fazer o parsing da pergunta:', error);
+				setQuestionText('');
+				setQuestionQuestion('');
+			}
+		} else {
+			setQuestionText(excercice?.question?.text || '');
+			setQuestionQuestion(excercice?.question?.question || '');
 		}
 	}, [excercice]);
 
@@ -35,20 +51,18 @@ function EjercicioVocabulario({ excercice, onResponse }) {
 		}, 1000); // Adiciona um atraso para mostrar a resposta correta antes de passar para o próximo exercício
 	};
 
-	const getCleanImagePath = (path) => {
-		if (path.startsWith('/media/')) {
-			return path.replace('/media/', '');
-		}
-		return path;
-	};
-	
 	return (
 		<div className="my-4 p-4 border-2 rounded-lg shadow-lg text-center bg-white border-gray-300">
-			<p className="text-lg font-semibold text-gray-700">{excercice?.question}</p>
-			<div
-				className="mb-4 mx-auto p-4 border-2 rounded-lg shadow-inner bg-gray-100 border-gray-300"
-				style={{ maxWidth: '200px', height: '200px' }}>
-				<Image src={imageUrl} alt={excercice?.question} className="h-full w-full object-cover rounded-lg" />
+			<div className="flex justify-between items-center">
+				<div className="w-0.4 pr-4 text-lg font-semibold text-gray-700 text-justify">
+					<p>{questionText}</p>
+					<p>{questionQuestion}</p>
+				</div>
+				<div
+					className=" mb-4 p-4 border-2 rounded-lg shadow-inner bg-gray-100 border-gray-300"
+					style={{ maxWidth: '200px', height: '200px' }}>
+					<Image src={imageUrl} alt={questionQuestion} className="h-full w-full object-cover rounded-lg" />
+				</div>
 			</div>
 			<div className="flex justify-around flex-wrap">
 				{options.map((option, index) => (
@@ -77,4 +91,4 @@ function EjercicioVocabulario({ excercice, onResponse }) {
 	);
 }
 
-export default EjercicioVocabulario;
+export default EjercicioReading;

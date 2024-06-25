@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Button, Link } from '@nextui-org/react';
-import { getTopic } from '@/services/topicFetching';
+import { filter_levels, getLevels, getTopic, return_questions } from '@/services/topicFetching';
 import { usePathname } from 'next/navigation';
 
 import BarraDeProgreso from '@/components/vocabulary/BarraDeProgreso';
@@ -17,29 +17,31 @@ function VocabularyPage() {
 	const pathSegments = path.split('/'); // Divide a URL em segmentos
 	const params = {
 		topic_slug: pathSegments[1],
-		level_id: pathSegments[2],
+		level_dif: parseInt(pathSegments[2], 10),
 		quest_type: pathSegments[3]
 	};
 
-	const [topic, setTopic] = useState(null);
-	const [level, setLevel] = useState(null);
+	const [topic_title, setTopicTitle] = useState(null);
+	const [level, setLevel] = useState([]);
 	const [vocabulary, setVocabulary] = useState([]);
 	const [progreso, setProgreso] = useState(0);
 	const [lifes, setVidas] = useState(3);
 	const [exerciseIndex, setExcerciseIndex] = useState(0);
 	const [finish, setFinish] = useState(false);
+	const [level_id, setLevelID] = useState(null);
 
 	React.useEffect(() => {
 		async function fetchData() {
-			const topicData = await getTopic(params.topic_slug);
-			setTopic(topicData);
-			setLevel(params.level_id);
-			const questions = await get_questions(params.level_id, params.quest_type);
-			setVocabulary(Array.isArray(questions) ? questions : []);
+			const { pregs, topicTitle, levelId } = await return_questions(params.topic_slug, params.level_dif, params.quest_type);
+            setVocabulary(pregs);
+			setTopicTitle(topicTitle);
+			setLevelID(levelId);
 		}
 		fetchData();
-	}, [params.topic_slug, params.level_id, params.quest_type]);
-		//console.log("Vocabulary lenght = "+vocabulary.length)
+	}, [params.topic_slug, params.level_dif, params.quest_type]);
+
+	
+
 	const handleResponse = (isCorrect) => {
 		setProgreso(progreso + 100 / vocabulary.length); // Incrementa o progresso
 		if (!isCorrect) {
@@ -51,6 +53,7 @@ function VocabularyPage() {
 			setFinish(true); // Marca como finalizado quando se completam todos os exercícios
 		}
 	};
+
 
 	const reset = () => {
 		setProgreso(0);
@@ -64,7 +67,7 @@ function VocabularyPage() {
 			<div className="max-w-screen-lg mx-auto px-6 py-6">
 				<div className="flex flex-col gap-4">
 					<BreadCrumbs />
-					{level && <TopicLevelHeader title={topic?.title} chip={[exerciseIndex + 1, '/', vocabulary.length]} />}
+					{ <TopicLevelHeader title={topic_title} chip={[exerciseIndex + 1, '/', vocabulary.length]} />}
 				</div>
 				<BarraDeProgreso progreso={progreso} />
 				<Vidas vidas={lifes} />
