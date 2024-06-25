@@ -11,6 +11,7 @@ function BarraDeProgreso({ progreso }) {
 				animated="true"
 				shadow="true"
 				className="bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"
+				aria-label="Progresso do vocabulário"
 			/>
 		</div>
 	);
