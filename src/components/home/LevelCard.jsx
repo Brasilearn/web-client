@@ -10,9 +10,9 @@ function LevelCard(props) {
         : `http://brasilearn-api-gateway.fly.dev${props.item.image}`;
 
 	return (
-		<Link href={`/${props?.topic}/${props?.item.id}`} className="flex flex-col items-start">
+		<Link href={`/${props?.topic}/${props?.item.nivel}`} className="flex flex-col items-start">
 			<Button color="primary" className="w-fit rounded-none rounded-t-lg px-8 py-4">
-				Nivel {props?.item.id}
+				Nivel {props?.item.nivel}
 			</Button>
 			<Card className="select-none flex flex-col items-center p-0 rounded-none rounded-tr-lg rounded-b-lg h-full bg-white">
 				<CardBody className="overflow-visible">
