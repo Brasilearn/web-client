@@ -7,12 +7,17 @@ function EjercicioReading({ excercice, onResponse, topic_slug}) {
 	const [options, setOptions] = useState([]);
 	const [questionText, setQuestionText] = useState('');
 	const [questionQuestion, setQuestionQuestion] = useState('');
-
-	const randomValue = Math.floor(Math.random() * 10) + 1;
-	const imageUrl = `https://brasilearn-api-gateway.fly.dev/media/images/${topic_slug}/${randomValue}.webp`
+	const [imageURL, setImageURL] = useState(null)
 	
 
+
 	useEffect(() => {
+
+		
+		const randomValue = Math.floor(Math.random() * 10) + 1;
+		const imageUrl = `https://brasilearn-api-gateway.fly.dev/media/images/${topic_slug}/${randomValue}.webp`
+		setImageURL(imageUrl)
+
 		setSeleccion(null); // Reinicia a seleção quando muda o exercício
 		if (excercice && typeof excercice.options === 'string') {
 			// Faz o parsing de options se for uma string
@@ -61,7 +66,7 @@ function EjercicioReading({ excercice, onResponse, topic_slug}) {
 				<div
 					className=" mb-4 p-4 border-2 rounded-lg shadow-inner bg-gray-100 border-gray-300"
 					style={{ maxWidth: '200px', height: '200px' }}>
-					<Image src={imageUrl} alt={questionQuestion} className="h-full w-full object-cover rounded-lg" />
+					<Image src={imageURL} alt={questionQuestion} className="h-full w-full object-cover rounded-lg" />
 				</div>
 			</div>
 			<div className="flex justify-around flex-wrap">
