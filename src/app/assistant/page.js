@@ -17,34 +17,33 @@ const AssistantPage = () => {
 	};
 
 	const personalities = [{ name: 'Profesional' }, { name: 'Joven' }, { name: 'Sarcastico' }];
-	const [personality, setPersonality] = useState(personalities[0].name);
-
 	const providers = [{ name: 'groq' }, { name: 'openai' }];
-	const [provider, setProvider] = useState(providers[0].name);
-
 	const models = {
 		openai: [{ name: 'gpt-3.5-turbo' },{ name: 'gpt-4' },  { name: 'gpt-4o' }],
 		groq: [{ name: 'gemma-7b-it' }, { name: 'llama3-70b-8192' }, { name: 'llama3-8b-8192' }],
 	};
-	const [model, setModel] = useState(models[provider][0].name);
 
+    const [personality, setPersonality] = useState(personalities[0].name);
+    const [provider, setProvider] = useState(providers[0].name);
+	const [model, setModel] = useState(models[provider][0].name);
 	const [messages, setMessages] = useState([{ text: '¡Hola! ¿Cómo puedo ayudarte hoy?', isUser: false }]);
 
-	const handleSendMessage = (message) => {
-		setMessages((prevMessages) => [...prevMessages, { text: message, isUser: true }]);
-		async function getResponse() {
-			const response = await sendMessages('1', '1', message, provider, model, personality);
-			console.log(response);
-			setMessages((prevMessages) => [...prevMessages, { text: response.message, isUser: false }]);
-		}
-		getResponse();
-	};
+	
 
     useEffect(() => {
         setModel(models[provider][0].name);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [provider]);
 
+
+    const handleSendMessage = (message) => {
+		setMessages((prevMessages) => [...prevMessages, { text: message, isUser: true }]);
+		async function getResponse() {
+			const response = await sendMessages('2', '2', message, provider, model, personality);
+			setMessages((prevMessages) => [...prevMessages, { text: response.message, isUser: false }]);
+		}
+		getResponse();
+	};
 	return (
 		<div className="container flex flex-col md:flex-row gap-4 py-6">
 			<aside className="w-full max-w-sm flex flex-col gap-4">
