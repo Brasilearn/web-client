@@ -84,7 +84,7 @@ function VocabularyPage() {
 						</div>
 					</div>
 				) : lifes > 0 ? (
-					<EjercicioVocabulario excercice={vocabulary && vocabulary[exerciseIndex]} onResponse={handleResponse} />
+					<EjercicioVocabulario excercice={vocabulary && vocabulary[exerciseIndex]} onResponse={handleResponse} topic_slug={params.topic_slug} />
 				) : (
 					<div className="text-center text-red-500 text-2xl font-bold space-y-4">
 						<p>¡Has perdido todas tus vidas!</p>

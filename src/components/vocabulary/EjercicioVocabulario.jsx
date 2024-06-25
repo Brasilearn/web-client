@@ -2,16 +2,19 @@
 import { Image } from '@nextui-org/react';
 import React, { useState, useEffect } from 'react';
 
-function EjercicioVocabulario({ excercice, onResponse }) {
+function EjercicioVocabulario({ excercice, onResponse, topic_slug }) {
 	const [seleccion, setSeleccion] = useState(null);
 	const [options, setOptions] = useState([]);
+	const [imageURL, setImageURL] = useState(null)
 
-	const imageUrl =excercice?.image.startsWith('http')
-        ? props.item.image
-        : `http://brasilearn-api-gateway.fly.dev${excercice?.image}`;
+	
 
 	useEffect(() => {
-		
+
+		const randomValue = Math.floor(Math.random() * 10) + 1;
+		const imageUrl = `https://brasilearn-api-gateway.fly.dev/media/images/${topic_slug}/${randomValue}.webp`
+		setImageURL(imageUrl)
+
 		setSeleccion(null); // Reinicia a seleção quando muda o exercício
 		if (excercice && typeof excercice.options === 'string') {
 			// Faz o parsing de options se for uma string
@@ -48,7 +51,7 @@ function EjercicioVocabulario({ excercice, onResponse }) {
 			<div
 				className="mb-4 mx-auto p-4 border-2 rounded-lg shadow-inner bg-gray-100 border-gray-300"
 				style={{ maxWidth: '200px', height: '200px' }}>
-				<Image src={imageUrl} alt={excercice?.question} className="h-full w-full object-cover rounded-lg" />
+				<Image src={imageURL} alt={excercice?.question} className="h-full w-full object-cover rounded-lg" />
 			</div>
 			<div className="flex justify-around flex-wrap">
 				{options.map((option, index) => (
