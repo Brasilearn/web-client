@@ -5,7 +5,7 @@ import { Button } from '@nextui-org/react';
 import { FaMicrophone } from 'react-icons/fa';
 import { upload_audio } from '@/services/audio_transcription';
 
-const MicrophoneRecorder = ({ onRecord, referenceText, onServerResponse, className }) => {
+const MicrophoneRecorder = ({ onRecord, referenceText, onServerResponse, className ,mic_size=48}) => {
     const [isRecording, setIsRecording] = useState(false);
     const mediaRecorderRef = useRef(null);
     const audioChunksRef = useRef([]);
@@ -41,16 +41,15 @@ const MicrophoneRecorder = ({ onRecord, referenceText, onServerResponse, classNa
 
     return (
         <div className={`flex flex-col items-center justify-center mt-4 ${className}`}>
-            <Button
-                auto
-                shadow
+            <button
+                
                 onClick={handleStartRecording}
-                className={`group rounded-full w-48 h-48 flex items-center justify-center ${
+                className={`group rounded-full w-fit h-fit flex items-center justify-center ${
                     isRecording ? 'bg-red-500' : 'bg-blue-500'
-                } transition duration-300 text-white`}
+                } transition duration-300 text-white p-12` }
             >
-                <FaMicrophone size={48} className="text-white group-hover:text-white/80" />
-            </Button>
+                <FaMicrophone size={mic_size} className="text-white group-hover:text-white/80 w-30 h-30" />
+            </button>
         </div>
     );
 };

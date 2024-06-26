@@ -110,13 +110,18 @@ function ListeningPage() {
                                 phraseSpanish={phrase?.spanish}
                                 audioPath={`https://brasilearn-api-gateway.fly.dev/media/audios/${params.topic_slug}/${getPhraseIndex(phrase, frases, params.level_dif)}.mp3`}
                             />
+						</Card>
+						
+						<Card className="shadow-md select-none w-full">
 							<h2 className="text-center text-blue-900 mb-2 text-3xl font-semibold">Intenta repetir lo que escuchaste</h2>
-                            <MicrophoneRecorder className= "mb-4"
-                                onRecord={handleRecord}
-                                referenceText={phrase?.portuguese}
-                                onServerResponse={handleServerResponse}
-                            />
-                        </Card>
+							<MicrophoneRecorder className= "mb-4"
+								onRecord={handleRecord}
+								referenceText={phrase?.portuguese}
+								onServerResponse={handleServerResponse}
+								mic_size={38}
+							/>
+						</Card>
+								
                         {serverResponse && (
                             <Card className="shadow-md select-none w-full mt-4">
                                 <CardBody style={{ backgroundColor: getBackgroundColor(serverResponse.score) }}>
