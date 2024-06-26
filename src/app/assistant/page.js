@@ -9,6 +9,8 @@ import FAQSection from '@/components/assistant/FAQSection';
 import Filters from '@/components/common/Filters';
 import { getChats, sendMessages } from '@/services/iaFetching';
 
+const generateUniqueId = () => '_' + Math.random().toString(36).substr(2, 9);
+
 const mockUser = {
 	id: 2,
 	name: 'Admin',
@@ -16,27 +18,26 @@ const mockUser = {
 };
 
 const mockChat = {
-    chat_id: '0', 
-    data:[{ content: 'Hola, soy tu asistente virtual, ¿en qué puedo ayudarte?', isUser: 'assistant' }], 
-    personalidad: "Default", 
-    titulo: "Chat 1" 
-}
+	chat_id: generateUniqueId(),
+	data: [{ content: 'Hola, soy tu asistente virtual, ¿en qué puedo ayudarte?', isUser: 'assistant' }],
+	personalidad: 'Default',
+	titulo: 'Chat 1',
+};
 
 const personalities = [{ name: 'Profesional' }, { name: 'Joven' }, { name: 'Sarcastico' }];
 const providers = [{ name: 'groq' }, { name: 'openai' }];
 const models = {
 	openai: [{ name: 'gpt-3.5-turbo' }, { name: 'gpt-4' }, { name: 'gpt-4o' }],
-	groq: [ { name: 'llama3-70b-8192' }, { name: 'gemma-7b-it' }, { name: 'llama3-8b-8192' }],
+	groq: [{ name: 'llama3-70b-8192' }, { name: 'gemma-7b-it' }, { name: 'llama3-8b-8192' }],
 };
 
 const AssistantPage = () => {
-	const [chats, setChats] = useState([]);
-    const [chatSelected, setChatSelect ] = useState(null);
-    const [messages, setMessages] = useState([]);
+	const [chats, setChats] = useState(null);
+	const [chatSelected, setChatSelect] = useState(null);
+	const [messages, setMessages] = useState([]);
 	const [personality, setPersonality] = useState(personalities[0].name);
 	const [provider, setProvider] = useState(providers[0].name);
 	const [model, setModel] = useState(models[provider][0].name);
-	
 
 	useEffect(() => {
 		setModel(models[provider][0].name);
@@ -46,25 +47,47 @@ const AssistantPage = () => {
 	useEffect(() => {
 		const chatsFetching = async () => {
 			const chats = await getChats(mockUser.id);
-			setChats(chats.length > 0 ? chats : [mockChat]);
-            setChatSelect(chats.length > 0 ? chats[0] : mockChat);
+            if (chats.length === 0) {
+                return;
+            }
+			setChats(chats);
+			setChatSelect(chats[0]);
 		};
 		chatsFetching();
 	}, []);
 
-    useEffect(() => {
-        if (chatSelected) {
-            setMessages(chatSelected.data);
-        }
-    }, [chatSelected]);
-
-	const handleSendMessage = (message) => {
-		setMessages((prevMessages) => [...prevMessages, { content: message, role: 'user' }]);
-		async function getResponse() {
-			const response = await sendMessages(mockUser.id, '2', message, provider, model, personality);
-			setMessages((prevMessages) => [...prevMessages, { content: response.message, role: 'assistant' }]);
+	useEffect(() => {
+		if (chatSelected) {
+			setMessages(chatSelected.data);
 		}
-		getResponse();
+	}, [chatSelected]);
+
+	const handleSendMessage = async (message) => {
+		setMessages((prevMessages) => [...prevMessages, { content: message, role: 'user' }]);
+		const response = await sendMessages(mockUser.id, chatSelected.chat_id, message, provider, model, personality);
+		setMessages((prevMessages) => [...prevMessages, { content: response.message, role: 'assistant' }]);
+        if (response.title && response.title !== chatSelected.titulo) {
+            setChats((prevChats) =>
+                prevChats.map((chat) =>
+                    chat.chat_id === chatSelected.chat_id ? { ...chat, titulo: response.title } : chat
+                )
+            );
+        }
+	};
+
+	const handleNewChat = () => {
+		const newChatId = generateUniqueId();
+		const newChat = {
+			chat_id: newChatId,
+			data: mockChat.data,
+			personalidad: personality,
+			titulo: 'Chat Nuevo',
+		};
+        setChats((prevChats) => {
+            const updatedChats = prevChats !== null ? [...prevChats, newChat] : [newChat];
+            setChatSelect(updatedChats[updatedChats.length - 1]); 
+            return updatedChats;
+        });
 	};
 
 	return (
@@ -73,7 +96,7 @@ const AssistantPage = () => {
 				<Title size="medium" color="primary">
 					Chat Bot
 				</Title>
-				<ChatList data={chats} onSelect={setChatSelect}/>
+				<ChatList data={chats} onSelect={setChatSelect} onCreate={handleNewChat} />
 				<Title size="small" color="primary">
 					Personalidad: {personality}
 				</Title>

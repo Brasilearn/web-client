@@ -16,22 +16,21 @@ export async function getContext(user_id, chat_id) {
 }
 
 export async function getChats(user_id) {
-    try {
-        const response = await axios.get(`https://brasilearn-api-gateway.fly.dev/all_chats_user/${user_id}`);
-        return response.data.context;
-    } catch (error) {
-        return [];
-    }
+	try {
+		const response = await axios.get(`https://brasilearn-api-gateway.fly.dev/all_chats_user/${user_id}`);
+		return response.data.context;
+	} catch (error) {
+		return [];
+	}
 }
 
 export async function sendMessages(user_id, chat_id, message, provider, model, personality) {
-
 	const body = {
 		user_id: user_id,
-        chat_id: chat_id,
+		chat_id: chat_id,
 		prompt: message,
 		provider: provider,
-        model: model,
+		model: model,
 		personalidad: personality,
 	};
 	try {
@@ -39,6 +38,6 @@ export async function sendMessages(user_id, chat_id, message, provider, model, p
 		return response.data;
 	} catch (error) {
 		console.error(error);
-		return { message: 'Lo siento, no pude entender tu mensaje.', title: 'Error'};
+		return { message: 'Lo siento, no pude entender tu mensaje.', role: 'assistant', title: 'Error' }
 	}
 }
