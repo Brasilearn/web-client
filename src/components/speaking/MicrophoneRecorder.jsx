@@ -5,7 +5,7 @@ import { Button } from '@nextui-org/react';
 import { FaMicrophone } from 'react-icons/fa';
 import { upload_audio } from '@/services/audio_transcription';
 
-const MicrophoneRecorder = ({ onRecord, referenceText, onServerResponse }) => {
+const MicrophoneRecorder = ({ onRecord, referenceText, onServerResponse, className }) => {
     const [isRecording, setIsRecording] = useState(false);
     const mediaRecorderRef = useRef(null);
     const audioChunksRef = useRef([]);
@@ -40,7 +40,7 @@ const MicrophoneRecorder = ({ onRecord, referenceText, onServerResponse }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center mt-4">
+        <div className={`flex flex-col items-center justify-center mt-4 ${className}`}>
             <Button
                 auto
                 shadow
