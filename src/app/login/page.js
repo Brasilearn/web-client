@@ -39,11 +39,7 @@ function LoginPage() {
 						fullWidth
 						color="primary"
 						size="lg"
-<<<<<<< HEAD
-						placeholder="username"
-=======
-						placeholder="username"
->>>>>>> f834c936a3ecb0ca1e39d30cbd6eb2a45a3e532d
+						placeholder="Username"
 						ref={usernameRef}
 					/>
 					<Input
