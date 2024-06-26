@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { getTopic } from '@/services/topicFetching';
+import { getTopic, return_questions } from '@/services/topicFetching';
 import { Card } from '@nextui-org/react';
 
 import TopicLevelHeader from '@/components/levels/TopicLevelHeader';
@@ -12,32 +12,43 @@ import Breadcrumbs from '@/components/common/Breadcrumbs';
 function ListeningPage() {
     const path = usePathname();
     const pathSegments = path.split('/'); // Divide a URL em segmentos
-	const params = {
-		topic_slug: pathSegments[1],
-		level_dif: parseInt(pathSegments[2], 10),
-		quest_type: pathSegments[3]
-	};
+    const params = {
+        topic_slug: pathSegments[1],
+        level_dif: parseInt(pathSegments[2], 10),
+        quest_type: pathSegments[3]
+    };
 
-	const initialPhrase = { portuguese: 'Olá, como você está?', spanish: 'Hola, ¿cómo estás?' };
+
 
 	const [phrase, setPhrase] = useState(null);
-	const [topic_title, setTopicTitle] = useState(null);
 	const [frases, setFrases] = useState([]);
 	const [topic, setTopic] = React.useState(null);
 	const [level, setLevel] = React.useState(null);
-	const [level_id, setLevelID] = useState(null);
+	const [topicTitle, setTopicTitle] = useState(null);
+	const [levelID, setLevelID] = useState(null);
+
 
 	React.useEffect(() => {
-		async function fetchData() {
-			const { pregs, topicTitle, levelId } = await return_questions(params.topic_slug, params.level_dif, params.quest_type);
-            setFrases(pregs);
-			setTopicTitle(topicTitle);
-			setLevelID(levelId);
-		}
-		fetchData();
-	}, [params.topic_slug, params.level_dif, params.quest_type]);
+        async function fetchData() {
+            const { pregs, topicTitle, levelId } = await return_questions(params.topic_slug, params.level_dif, params.quest_type);
+            const formattedFrases = pregs.map(q => {
+                const question = JSON.parse(q.question);
+                return [
+                    { portuguese: question.frase1 },
+                    { portuguese: question.frase2 },
+                    { portuguese: question.frase3 },
+                    { portuguese: question.frase4 },
+                    { portuguese: question.frase5 }
+                ];
+            }).flat();
+            setFrases(formattedFrases);
+            setTopicTitle(topicTitle);
+            setLevelID(levelId);
+        }
+        fetchData();
+    }, [params.topic_slug, params.level_dif, params.quest_type]);
 
-	console.log(pregs)
+
 	const handlePlay = () => {
 		console.log('Reproduciendo frase...');
 	};
@@ -78,25 +89,14 @@ function ListeningPage() {
 				</div>
 				<div className="flex-grow flex flex-col md:flex-row items-start justify-between w-full gap-4">
 					<PhraseList
-						phrases={[
-							initialPhrase,
-							{ portuguese: 'Bom dia!', spanish: '¡Buenos días!' },
-							{ portuguese: 'Boa noite.', spanish: 'Buenas noches.' },
-							{ portuguese: 'Como vai?', spanish: '¿Cómo va?' },
-							{ portuguese: 'Tudo bem?', spanish: '¿Todo bien?' },
-							{ portuguese: 'Até logo!', spanish: '¡Hasta luego!' },
-							{ portuguese: 'Obrigado!', spanish: '¡Gracias!' },
-							{ portuguese: 'Desculpe.', spanish: 'Perdón.' },
-							{ portuguese: 'Eu te amo.', spanish: 'Te amo.' },
-							{ portuguese: 'Feliz aniversário!', spanish: '¡Feliz cumpleaños!' },
-						]}
-						onSelect={handleSelectPhrase}
+						phrases={frases}
+                        onSelect={handleSelectPhrase}
 					/>
 					<div className="flex-grow flex flex-col items-center justify-between gap-4">
 						<Card className="shadow-md select-none w-full">
 							<PhrasePlayer
-								phrasePortuguese={phrase.portuguese}
-								phraseSpanish={phrase.spanish}
+								phrasePortuguese={phrase?.portuguese}
+								phraseSpanish={phrase?.spanish}
 								onPlay={handlePlay}
 								onRepeat={handleRepeat}
 							/>

@@ -11,9 +11,7 @@ function EjercicioVocabulario({ excercice, onResponse, topic_slug }) {
 
 	useEffect(() => {
 
-		const randomValue = Math.floor(Math.random() * 10) + 1;
-		const imageUrl = `https://brasilearn-api-gateway.fly.dev/media/images/${topic_slug}/${randomValue}.webp`
-		setImageURL(imageUrl)
+		
 
 		setSeleccion(null); // Reinicia a seleção quando muda o exercício
 		if (excercice && typeof excercice.options === 'string') {
@@ -29,6 +27,10 @@ function EjercicioVocabulario({ excercice, onResponse, topic_slug }) {
 		} else {
 			setOptions(excercice?.options || []);
 		}
+
+		const randomValue = Math.floor(Math.random() * 10) + 1;
+		const imageUrl = `https://brasilearn-api-gateway.fly.dev/media/images/${topic_slug}/${randomValue}.webp`
+		setImageURL(imageUrl)
 	}, [excercice]);
 
 	const handleSeleccion = (option) => {
