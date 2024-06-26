@@ -75,7 +75,7 @@ function VocabularyPage() {
 					<div className="text-center text-blue-500 font-bold space-y-4">
 						<p className="text-2xl">¡Felicidades! Has completado todos los ejercicios.</p>
 						<div className="flex items-center justify-center gap-4 mt-2">
-							<Button as={Link} href={`/${topic?.slug}/${level?.id}/results`} color="primary" className="px-4 py-2">
+							<Button as={Link} href={`/${params.topic_slug}/${level_id}/results`} color="primary" className="px-4 py-2">
 								Ver Resultados
 							</Button>
 							<Button onClick={reset} className="px-4 py-2 ">

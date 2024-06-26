@@ -22,7 +22,7 @@ export default async function LevelsPage({ params }) {
 				<TopicLevelHeader
 					title={levels[params.level - 1].title}
 					description={levels[params.level - 1].description}
-					chip={['nivel:', levels[params.level - 1].id].join(' ')}
+					chip={['nivel:', levels[params.level - 1].nivel].join(' ')}
 				/>
 			)}
 			<h1 className="font-bold text-lg md:text-2xl mb-2">Expande tu conocimiento en:</h1>
