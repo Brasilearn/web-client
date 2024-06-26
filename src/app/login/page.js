@@ -23,7 +23,7 @@ function LoginPage() {
 			
             console.log('Login successful:', response);
             // Optionally, you can force a page reload or navigate to trigger re-fetching the header data
-            window.location.href = '/';;
+            window.location.href = '/';
         } catch (error) {
             console.error('Login failed:', error);
         }
