@@ -10,8 +10,12 @@ const ChatList = ({ data, onSelect, onCreate }) => {
 	const [newChatName, setNewChatName] = useState('');
 
     useEffect(() => {
+        if (data === null) {
+            onCreate();
+            return;
+        }
         setChats(data);
-    }, [data]);
+    }, [data, onCreate]);
 
 	const handleMenuClick = (index) => {
 		setActiveMenu(activeMenu === index ? null : index);
@@ -30,7 +34,7 @@ const ChatList = ({ data, onSelect, onCreate }) => {
 
 	return (
 		<div className="flex flex-col gap-4">
-			<ul className="relative z-10 overflow-y-scroll overflow-clip h-[34vh] pr-2 flex flex-col gap-2">
+			<ul className="relative z-10 overflow-y-scroll overflow-clip h-[34vh] p-2 rounded-md flex flex-col gap-2 border border-gray-100 bg-gray-50">
 				{chats && chats.map((item, index) => (
 					<li
 						key={index}
