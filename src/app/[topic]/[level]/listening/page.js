@@ -18,17 +18,14 @@ function ListeningPage() {
         quest_type: pathSegments[3]
     };
 
+    const [phrase, setPhrase] = useState(null);
+    const [frases, setFrases] = useState([]);
+    const [topic, setTopic] = React.useState(null);
+    const [level, setLevel] = React.useState(null);
+    const [topicTitle, setTopicTitle] = useState(null);
+    const [levelID, setLevelID] = useState(null);
 
-
-	const [phrase, setPhrase] = useState(null);
-	const [frases, setFrases] = useState([]);
-	const [topic, setTopic] = React.useState(null);
-	const [level, setLevel] = React.useState(null);
-	const [topicTitle, setTopicTitle] = useState(null);
-	const [levelID, setLevelID] = useState(null);
-
-
-	React.useEffect(() => {
+    React.useEffect(() => {
         async function fetchData() {
             const { pregs, topicTitle, levelId } = await return_questions(params.topic_slug, params.level_dif, params.quest_type);
             const formattedFrases = pregs.map(q => {
@@ -48,64 +45,62 @@ function ListeningPage() {
         fetchData();
     }, [params.topic_slug, params.level_dif, params.quest_type]);
 
+    const handleSelectPhrase = (newPhrase) => {
+        setPhrase(newPhrase);
+    };
 
-	const handlePlay = () => {
-		console.log('Reproduciendo frase...');
-	};
+    const routesBreacrumbs = [
+        {
+            title: 'Inicio',
+            url: '/',
+        },
+        {
+            title: topic?.title,
+            url: topic?.slug,
+        },
+        {
+            title: topic?.levels[params.level - 1].title,
+            url: topic?.levels[params.level - 1].id,
+        },
+        {
+            title: 'Escucha',
+            url: 'Listening',
+        },
+    ];
 
-	const handleRepeat = () => {
-		console.log('Repetiendo frase...');
-	};
+	const getPhraseIndex = (phrase, phrases, level_dif) => {
+		const index = phrases.findIndex(p => p.portuguese === phrase?.portuguese) + 1;
 
-	const handleSelectPhrase = (newPhrase) => {
-		setPhrase(newPhrase);
-	};
+		const final = index + ((level_dif-1)*5)
+		console.log(final)
+        return final
+    };
 
-	const routesBreacrumbs = [
-		{
-			title: 'Inicio',
-			url: '/',
-		},
-		{
-			title: topic?.title,
-			url: topic?.slug,
-		},
-		{
-			title: topic?.levels[params.level - 1].title,
-			url: topic?.levels[params.level - 1].id,
-		},
-		{
-			title: 'Escucha',
-			url: 'Listening',
-		},
-	];
-
-	return (
-		<div className="bg-gradient-to-r from-blue-100 to-gray-100">
-			<div className="max-w-screen-lg mx-auto py-6 px-6 flex flex-col gap-4 items-top">
-				<div className="flex flex-col gap-4 w-full">
-					<Breadcrumbs items={routesBreacrumbs} />
-					{level && <TopicLevelHeader title={level.title} chip={['nivel:', level.id].join(' ')} />}
-				</div>
-				<div className="flex-grow flex flex-col md:flex-row items-start justify-between w-full gap-4">
-					<PhraseList
-						phrases={frases}
+    return (
+        <div className="bg-gradient-to-r from-blue-100 to-gray-100">
+            <div className="max-w-screen-lg mx-auto py-6 px-6 flex flex-col gap-4 items-top">
+                <div className="flex flex-col gap-4 w-full">
+                    <Breadcrumbs items={routesBreacrumbs} />
+                    {level && <TopicLevelHeader title={level.title} chip={['nivel:', level.id].join(' ')} />}
+                </div>
+                <div className="flex-grow flex flex-col md:flex-row items-start justify-between w-full gap-4">
+                    <PhraseList
+                        phrases={frases}
                         onSelect={handleSelectPhrase}
-					/>
-					<div className="flex-grow flex flex-col items-center justify-between gap-4">
-						<Card className="shadow-md select-none w-full">
-							<PhrasePlayer
-								phrasePortuguese={phrase?.portuguese}
-								phraseSpanish={phrase?.spanish}
-								onPlay={handlePlay}
-								onRepeat={handleRepeat}
-							/>
-						</Card>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+                    />
+                    <div className="flex-grow flex flex-col items-center justify-between gap-4">
+                        <Card className="shadow-md select-none w-full">
+                            <PhrasePlayer
+                                phrasePortuguese={phrase?.portuguese}
+                                phraseSpanish={phrase?.spanish}
+                                audioPath={`https://brasilearn-api-gateway.fly.dev/media/audios/${params.topic_slug}/${getPhraseIndex(phrase, frases,params.level_dif)}.mp3`}
+                            />
+                        </Card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default ListeningPage;
