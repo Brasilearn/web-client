@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { Input, Button, Card, Image } from '@nextui-org/react';
 import { login } from '@/services/auth';
+import Cookies from 'js-cookie';
 
 function LoginPage() {
 
@@ -14,8 +15,8 @@ function LoginPage() {
 		const password = passwordRef.current.value;
 		
 		try {
-			const response = await login(email, password);
-			const { token } = response;
+			const response = await login(username, password);
+			const { token } = response.token;
 
 			// Save the token in cookies
 			Cookies.set('authToken', token, { expires: 7 }); // Token expires in 7 days
