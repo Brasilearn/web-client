@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { Input, Button, Card, Image } from '@nextui-org/react';
 import { login } from '@/services/auth';
+import { NextResponse } from 'next/server';
 import Cookies from 'js-cookie';
 
 function LoginPage() {
@@ -22,6 +23,8 @@ function LoginPage() {
 			Cookies.set('authToken', token, { expires: 7 }); // Token expires in 7 days
 
 			console.log('Login successful:', response);
+            // Redirect to the home page
+            return NextResponse.redirect(new URL('/'));
 		} catch (error) {
 
 			console.error('Login failed:', error);
