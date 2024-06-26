@@ -15,10 +15,14 @@ function LoginPage() {
 		
 		try {
 			const response = await login(email, password);
-			// Handle successful login (e.g., redirect to another page)
+			const { token } = response;
+
+			// Save the token in cookies
+			Cookies.set('authToken', token, { expires: 7 }); // Token expires in 7 days
+
 			console.log('Login successful:', response);
 		} catch (error) {
-			// Handle login error (e.g., show error message)
+            
 			console.error('Login failed:', error);
 		}
 	};

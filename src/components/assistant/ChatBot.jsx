@@ -8,14 +8,14 @@ const ChatBot = ({ data }) => {
 		<div
 			id="chat-container"
 			className="flex flex-col gap-4 overflow-y-auto overflow-clip h-[50vh] p-4 rounded-md border border-gray-100 bg-gray-50">
-			{data.map((msg, index) => (
+			{data && data.map((msg, index) => (
 					<div key={index}>
                     {
                         msg.role !== 'system' &&
                         <ChatMessage
 						message={msg.content}
 						isUser={msg.role === 'user'}
-						isAnimate={index === data.length - 1}
+						isAnimate={msg?.animate??false}
 					/>
                     }
                     </div>
