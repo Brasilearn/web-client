@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from 'react';
 import { Input, Button, Card, Image } from '@nextui-org/react';
-import { signup } from '@/services/auth';
+import { register } from '@/services/auth';
 
 function SignupPage() {
     const usernameRef = useRef(null);
@@ -17,7 +17,7 @@ function SignupPage() {
         const password = passwordRef.current.value;
 
         try {
-            const response = await signup(username, fullname, email, password);
+            const response = await register(username, fullname, email, password);
             // Handle successful signup (e.g., redirect to another page)
             console.log('Signup successful:', response);
         } catch (error) {
