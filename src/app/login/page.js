@@ -5,16 +5,16 @@ import { login } from '@/services/auth';
 
 function LoginPage() {
 
-    const emailRef = useRef(null);
+    const usernameRef = useRef(null);
 	const passwordRef = useRef(null);
 
 	const handleLogin = async (event) => {
 		event.preventDefault();
-		const email = emailRef.current.value;
+		const username = usernameRef.current.value;
 		const password = passwordRef.current.value;
 		
 		try {
-			const response = await login(email, password);
+			const response = await login(username, password);
 			const { token } = response;
 
 			// Save the token in cookies
@@ -22,7 +22,7 @@ function LoginPage() {
 
 			console.log('Login successful:', response);
 		} catch (error) {
-            
+
 			console.error('Login failed:', error);
 		}
 	};
@@ -39,8 +39,8 @@ function LoginPage() {
 						fullWidth
 						color="primary"
 						size="lg"
-						placeholder="Email"
-						ref={emailRef}
+						placeholder="Username"
+						ref={usernameRef}
 					/>
 					<Input
 						clearable

@@ -97,7 +97,7 @@ function Header() {
 					</>
 				) : (
 					<NavbarItem className="hidden lg:flex gap-4">
-						<Link as="button" color="primary" radius="sm" onClick={handleLogin}>
+						<Link variant='solid' color="primary" radius="sm" href='/login'>
 							Acceder
 						</Link>
 						<Button as={Link} color="primary" radius="sm" href="/register">
