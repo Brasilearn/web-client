@@ -20,8 +20,7 @@ export async function getChats(user_id) {
         const response = await axios.get(`https://brasilearn-api-gateway.fly.dev/all_chats_user/${user_id}`);
         return response.data.context;
     } catch (error) {
-        console.error(error);
-        return null;
+        return [];
     }
 }
 

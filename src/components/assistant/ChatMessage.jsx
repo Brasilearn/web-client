@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import TypewriterEffect from '@/components/assistant/TypewriterEffect';
 
-const ChatMessage = ({ message, isUser, isAnimate, chatContainerRef }) => {
+const ChatMessage = ({ message, isUser, isAnimate }) => {
 	const [displayedText, setDisplayedText] = useState('');
 	const [index, setIndex] = useState(0);
 
@@ -13,15 +13,12 @@ const ChatMessage = ({ message, isUser, isAnimate, chatContainerRef }) => {
 			const timeoutId = setTimeout(() => {
 				setDisplayedText((prev) => prev + message[index]);
 				setIndex((prev) => prev + 1);
-				if (chatContainerRef.current) {
-					chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-				}
 			}, 50); // Ajusta la velocidad de escritura si es necesario
 			return () => clearTimeout(timeoutId);
 		} else if (!isAnimate) {
 			setDisplayedText(message);
 		}
-	}, [index, message, isAnimate, chatContainerRef]);
+	}, [index, message, isAnimate]);
 
 	return (
 		<motion.div
@@ -40,7 +37,6 @@ ChatMessage.propTypes = {
 	message: PropTypes.string.isRequired,
 	isUser: PropTypes.bool.isRequired,
 	isAnimate: PropTypes.bool.isRequired,
-	chatContainerRef: PropTypes.object.isRequired,
 };
 
 export default ChatMessage;
