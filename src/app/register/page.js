@@ -20,6 +20,7 @@ function SignupPage() {
             const response = await register(username, fullname, email, password);
             // Handle successful signup (e.g., redirect to another page)
             console.log('Signup successful:', response);
+            window.location.href = '/login';
         } catch (error) {
             // Handle signup error (e.g., show error message)
             console.error('Signup failed:', error);

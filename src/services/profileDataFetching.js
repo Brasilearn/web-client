@@ -1,9 +1,19 @@
 import axios from 'axios';
 
+export async function get_user_info(id_user) {
+    //peticion
+    const res = await axios.get(`https://brasilearn-api-gateway.fly.dev/user-info/${id_user}/`)
+        .then((response) => {
+            return response;
+        }).catch((error) => {
+            return error;
+        });
+    return res.data;
+}
 
 export async function getProfileData(id_user) {
     //peticion
-    const res = await axios.get(`https://brasilearn-api-gateway.fly.dev/profile/${id_user}`)
+    const res = await axios.get(`https://brasilearn-api-gateway.fly.dev/GetUserProfile/`)
         .then((response) => {
             return response;
         }).catch((error) => {
