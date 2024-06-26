@@ -1,13 +1,14 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { getTopic, return_questions } from '@/services/topicFetching';
-import { Card } from '@nextui-org/react';
+import { Card, CardBody } from '@nextui-org/react';
 
 import TopicLevelHeader from '@/components/levels/TopicLevelHeader';
 import PhrasePlayer from '@/components/speaking/PhrasePlayer';
 import PhraseList from '@/components/speaking/PhraseList';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
+import MicrophoneRecorder from '@/components/speaking/MicrophoneRecorder';
 
 function ListeningPage() {
     const path = usePathname();
@@ -20,12 +21,13 @@ function ListeningPage() {
 
     const [phrase, setPhrase] = useState(null);
     const [frases, setFrases] = useState([]);
-    const [topic, setTopic] = React.useState(null);
-    const [level, setLevel] = React.useState(null);
+    const [topic, setTopic] = useState(null);
+    const [level, setLevel] = useState(null);
     const [topicTitle, setTopicTitle] = useState(null);
     const [levelID, setLevelID] = useState(null);
+    const [serverResponse, setServerResponse] = useState(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         async function fetchData() {
             const { pregs, topicTitle, levelId } = await return_questions(params.topic_slug, params.level_dif, params.quest_type);
             const formattedFrases = pregs.map(q => {
@@ -47,6 +49,7 @@ function ListeningPage() {
 
     const handleSelectPhrase = (newPhrase) => {
         setPhrase(newPhrase);
+        setServerResponse(null); // Reseta a resposta do servidor quando uma nova frase é selecionada
     };
 
     const routesBreacrumbs = [
@@ -68,12 +71,24 @@ function ListeningPage() {
         },
     ];
 
-	const getPhraseIndex = (phrase, phrases, level_dif) => {
-		const index = phrases.findIndex(p => p.portuguese === phrase?.portuguese) + 1;
+    const getPhraseIndex = (phrase, phrases, level_dif) => {
+        const index = phrases.findIndex(p => p.portuguese === phrase?.portuguese) + 1;
+        const final = index + ((level_dif - 1) * 5);
+        return final;
+    };
 
-		const final = index + ((level_dif-1)*5)
-		console.log(final)
-        return final
+    const handleRecord = (isRecording) => {
+        console.log(isRecording ? 'Recording started' : 'Recording stopped');
+    };
+
+    const handleServerResponse = (response) => {
+        setServerResponse(response);
+    };
+
+    const getBackgroundColor = (score) => {
+        const green = Math.floor(score * 255);
+        const red = Math.floor((1 - score) * 255);
+        return `rgba(${red}, ${green}, 0, 0.2)`; // Ajuste conforme necessário
     };
 
     return (
@@ -93,9 +108,23 @@ function ListeningPage() {
                             <PhrasePlayer
                                 phrasePortuguese={phrase?.portuguese}
                                 phraseSpanish={phrase?.spanish}
-                                audioPath={`https://brasilearn-api-gateway.fly.dev/media/audios/${params.topic_slug}/${getPhraseIndex(phrase, frases,params.level_dif)}.mp3`}
+                                audioPath={`https://brasilearn-api-gateway.fly.dev/media/audios/${params.topic_slug}/${getPhraseIndex(phrase, frases, params.level_dif)}.mp3`}
+                            />
+							<h2 className="text-center text-blue-900 mb-2 text-3xl font-semibold">Intenta repetir lo que escuchaste</h2>
+                            <MicrophoneRecorder className= "mb-4"
+                                onRecord={handleRecord}
+                                referenceText={phrase?.portuguese}
+                                onServerResponse={handleServerResponse}
                             />
                         </Card>
+                        {serverResponse && (
+                            <Card className="shadow-md select-none w-full mt-4">
+                                <CardBody style={{ backgroundColor: getBackgroundColor(serverResponse.score) }}>
+                                    <h2 className="font-bold text-xl">Transcrição: {serverResponse.transcription}</h2>
+                                    <p className="text-lg">Pontuação: {serverResponse.score.toFixed(2)}</p>
+                                </CardBody>
+                            </Card>
+                        )}
                     </div>
                 </div>
             </div>
